@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ProposalFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/add_p"
+            android:layout_width="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:text="@string/proposal"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/clHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/grey_300"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivFilter"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:queryBackground="@color/colorTransparent"
+        android:iconifiedByDefault="false"
+        android:layout_marginTop="6dp"
+        android:queryHint="Search Proposal"/>
+
+
+    <ImageView
+        android:id="@+id/ivFilter"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/filter_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
+    <View
+        android:id="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/grey_300"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clPending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clApproved"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        android:background="@color/colorPrimary"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvPending"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/pending"
+            android:textAllCaps="true"
+            android:fontFamily="@font/madriadpro_regular"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:textSize="16sp"
+            android:layout_height="match_parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clApproved"
+        app:layout_constraintStart_toEndOf="@+id/clPending"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tvApproved"
+            android:text="@string/approved"
+            android:textColor="@color/grey_700"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:fontFamily="@font/madriadpro_regular"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <View
+        app:layout_constraintTop_toBottomOf="@+id/clApproved"
+        app:layout_constraintEnd_toEndOf="@+id/clApproved"
+        app:layout_constraintStart_toStartOf="@+id/clPending"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPendingConcern"
+        android:padding="20dp"
+        android:clipToPadding="false"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/clPending"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+    <lax.lega.rv.com.legalax.common.CustomTextView
+        android:id="@+id/tvNoData"
+        android:text="@string/please_wait_while_we_find_lawyer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clPending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</android.support.constraint.ConstraintLayout>

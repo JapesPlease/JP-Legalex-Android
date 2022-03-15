@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/backpress1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12sp"
+            android:src="@drawable/icn_forwardback"/>
+
+        <lax.lega.rv.com.legalax.common.CustomTextView
+            android:id="@+id/add_p"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/backpress"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:text="DOCUMENTS"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:visibility="invisible"/>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/flVideo"
+                android:layout_width="match_parent"
+                android:background="@color/black"
+                android:layout_height="250dp">
+
+
+                <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                    android:id="@+id/videoView"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/ivThumbnail"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_video"
+                    android:visibility="visible"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/img_post"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icn_sample7"/>
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Lorem is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text."
+                android:textColor="@color/colorPrimary"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:id="@+id/txt_title"
+                />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelivicItalic
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="12dp"
+                android:text="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:textStyle="italic"
+                android:id="@+id/txt_story"
+                />
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/black"/>
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelivicItalic
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="8dp"
+                android:text="Paddy Finbar"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="italic"
+                android:id="@+id/txt_authorname"
+                />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelivicItalic
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="2dp"
+                android:text="Monday September 24,2018"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                android:textStyle="italic"
+                android:id="@+id/txt_date"
+                />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="12dp"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:id="@+id/txt_desc"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

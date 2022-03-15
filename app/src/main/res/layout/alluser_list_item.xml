@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:padding="5dp"
+    swipe:leftEdgeSwipeOffset="0dp"
+    swipe:rightEdgeSwipeOffset="0dp">
+
+    <!--Bottom View For Right to Left-->
+
+    <LinearLayout
+        android:id="@+id/bottom_wrapper1"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:weightSum="2">
+
+
+        <TextView
+            android:id="@+id/tv_add_credits"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="Add Credits"
+            android:textColor="#fff" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_wrapper"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:weightSum="2">
+
+
+        <TextView
+            android:id="@+id/tv_activate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00339B"
+            android:gravity="center"
+            android:text="Activate"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B22C30"
+            android:gravity="center"
+            android:text="Delete"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="5">
+
+            <RelativeLayout
+                android:layout_width="55dp"
+                android:layout_height="55dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icn_user_large" />
+
+                <LinearLayout
+                    android:id="@+id/ll_profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="bottom|right"
+                    android:paddingRight="2dp"
+                    android:paddingBottom="3dp">
+
+                    <ImageView
+                        android:id="@+id/iv_online"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+
+                        android:src="@drawable/circle_shape" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="PIERS MIRIAM"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvic
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="Lorem ipsum....."
+                android:singleLine="true"
+                android:textColor="@color/grey_500" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0.1">
+
+                <RelativeLayout
+                    android:id="@+id/rl_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:background="@drawable/icn_button_bg"
+                    android:gravity="center"
+
+                    >
+
+                    <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Chat"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_call"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/icn_button_bg"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Call"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_book"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/icn_button_bg"
+                        android:gravity="center"
+                        android:visibility="visible">
+
+                        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="BOOK"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.daimajia.swipe.SwipeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/textViewCategoryName"
+            android:paddingLeft="12dp"
+            android:text="Email"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/relativeLayoutCross"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/relativeLayoutCross"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_gray_circle"
+            >
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/icn_close"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:tint="@color/colorPrimary"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

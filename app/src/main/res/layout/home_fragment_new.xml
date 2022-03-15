@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/img_profile"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/icn_profile" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="110dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/icn_logo" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="60dp"
+                            android:id="@+id/icn_menu"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/icn_menu" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical"
+                            android:id="@+id/linearLayoutOnlineStatus"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:src="@drawable/toogle_off"
+                                android:id="@+id/switchButton" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textViewOnLineOffline"
+                                android:text="Online"
+                                android:textSize="14sp"
+                                android:layout_gravity="center_horizontal"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llHeader"
+            android:background="@color/colorPrimary" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clChat"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/clVideoCall"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="6dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp">
+
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_09"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivArrowChat"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icn_back" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:id="@+id/tvDescriptionChat"
+                app:layout_constraintBottom_toTopOf="@+id/ivArrowChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:paddingBottom="6dp"
+                android:text="Talk to an online Lawyer"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescriptionChat"
+                android:text="CHAT"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clVideoCall"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/clChat"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp">
+
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivArrowVideo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icn_back" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:id="@+id/tvDescriptionVideoCall"
+                app:layout_constraintBottom_toTopOf="@+id/ivArrowVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="6dp"
+                android:layout_marginStart="12dp"
+                android:text="Schedule a video call"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescriptionVideoCall"
+                android:text="VIDEO CALL"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clSendLegalProblem"
+            app:layout_constraintTop_toBottomOf="@+id/clChat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clDocuments"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp">
+
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_03"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivArrowLegalProblem"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icn_back" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:id="@+id/tvDescriptionLegalProblem"
+                app:layout_constraintBottom_toTopOf="@+id/ivArrowLegalProblem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:paddingBottom="6dp"
+                android:visibility="gone"
+                android:text="Consult with our lawers"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescriptionLegalProblem"
+                android:text="SEND A LEGAL PROBLEM"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clDocuments"
+            app:layout_constraintTop_toBottomOf="@+id/clVideoCall"
+            app:layout_constraintStart_toEndOf="@+id/clSendLegalProblem"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp">
+
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_04"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivArrowDocument"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icn_back" />
+
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:id="@+id/tvDescriptionDocument"
+                app:layout_constraintBottom_toTopOf="@+id/ivArrowDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="6dp"
+                android:visibility="gone"
+                android:layout_marginStart="12dp"
+                android:text="Easy sending of documents"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescriptionDocument"
+                android:text="@string/documents"
+                android:textAllCaps="true"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clProposal"
+            app:layout_constraintTop_toBottomOf="@+id/clSendLegalProblem"
+           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="160dp">
+
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/iv_05"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/ivArrowProposal"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icn_back" />
+
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:id="@+id/tvDescriptionProposal"
+                app:layout_constraintBottom_toTopOf="@+id/ivArrowProposal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:paddingBottom="6dp"
+                android:text="Send Proposals"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:id="@+id/tvProposalTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescriptionProposal"
+                android:text="@string/proposal"
+                android:textAllCaps="true"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WHAT'S NEW?"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/clProposal"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/clProposal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12sp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/icn_greenplus"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            app:layout_constraintTop_toBottomOf="@+id/img_add"
+            android:paddingHorizontal="12dp"
+            android:clipToPadding="false"
+            android:paddingVertical="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

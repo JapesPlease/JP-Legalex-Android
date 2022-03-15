@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/subscriber_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <FrameLayout
+        android:id="@+id/publisher_container"
+        android:layout_width="90dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:padding="2dp"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:paddingBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/publisher_container"
+        android:gravity="center_horizontal"
+        android:id="@+id/relativeLayoutGoingCall"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageViewCamera"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:layout_gravity="start"
+            android:paddingRight="5dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_camera_rotate" />
+
+            <ImageView
+                android:background="@drawable/red_call_button"
+                android:layout_width="50dp"
+                android:id="@+id/img_end_onGoingCall"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:paddingRight="5dp"
+                android:src="@drawable/calldetct" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingBottom="30dp"
+        android:id="@+id/relativeLayoutIncomingCall"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/img_end_Call"
+            android:layout_centerInParent="true"
+            android:paddingLeft="5dp"
+            android:background="@drawable/red_call_button"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/calldetct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/img_answer"
+            android:background="@drawable/call_answer"
+            android:layout_centerInParent="true"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:paddingRight="5dp"
+            android:src="@drawable/calldetct" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/circularImageView">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewPersonName"
+            android:text="Deepak"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="4sp"
+            android:textColor="@color/colorPrimary">
+
+        </TextView>
+
+        <Chronometer
+            android:id="@+id/chronometer2"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewlast5minutes"
+            android:text="Deepak"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginTop="4sp"
+            android:textColor="@color/red_900">
+
+        </TextView>
+
+
+    </LinearLayout>
+</RelativeLayout>

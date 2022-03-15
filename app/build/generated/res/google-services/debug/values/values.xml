@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">15933634728-0mfaaou7rn0v26tf3rrugclcjme373rj.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://legalax-dc179.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">15933634728</string>
+    <string name="google_api_key" translatable="false">AIzaSyDUrCUklPpNsDYOPY90vomfZkPJC71qrkc</string>
+    <string name="google_app_id" translatable="false">1:15933634728:android:f4d9920086719af5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDUrCUklPpNsDYOPY90vomfZkPJC71qrkc</string>
+    <string name="google_storage_bucket" translatable="false">legalax-dc179.appspot.com</string>
+    <string name="project_id" translatable="false">legalax-dc179</string>
+</resources>

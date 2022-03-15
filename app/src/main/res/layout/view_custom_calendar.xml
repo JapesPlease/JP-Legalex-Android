@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageButton
+            android:id="@+id/activity_main_pager_button_left_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:visibility="gone"
+            android:background="@drawable/oval_black_background_solid_selector"
+            android:src="@drawable/ic_keyboard_arrow_left_white_24dp"/>
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            android:id="@+id/activity_main_pager_text_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Month"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:padding="12dp"
+            android:text="Month"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:id="@+id/activity_main_pager_button_right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/oval_black_background_solid_selector"
+            android:src="@drawable/ic_keyboard_arrow_right_white_24dp"/>
+
+    </RelativeLayout>
+
+    <lax.lega.rv.com.legalax.views.WrapContentViewPager
+        android:id="@+id/activity_main_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

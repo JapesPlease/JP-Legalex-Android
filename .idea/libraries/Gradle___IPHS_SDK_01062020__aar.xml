@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :IPHS_SDK_01062020:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/707a2acd8e20123f2665bab989e7d369/IPHS_SDK_01062020/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/707a2acd8e20123f2665bab989e7d369/IPHS_SDK_01062020/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/707a2acd8e20123f2665bab989e7d369/IPHS_SDK_01062020/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/mainview"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp">
+
+            <RelativeLayout
+                android:layout_width="55dp"
+                android:layout_height="55dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/sample_image"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="bottom|right"
+                    android:paddingBottom="3dp"
+                    android:paddingRight="2dp">
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:id="@+id/iv_online"
+                        android:layout_height="13dp"
+                        android:src="@drawable/circle_shape"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="PIERS MIRIAM"
+                android:id="@+id/txt_name"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"/>
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvic
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:hint="Lorem ipsum....."
+                android:singleLine="true"
+                android:id="@+id/txt_email"
+                android:textColor="@color/grey_500"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            >
+        <RelativeLayout
+            android:id="@+id/rl_view"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/view"
+            android:gravity="center"
+            />
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCount"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:text="1"
+                ></lax.lega.rv.com.legalax.common.CustomTextviewBold>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

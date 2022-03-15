@@ -1,0 +1,165 @@
+<resources>
+
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+
+    <string name="phone_number">Phone Number</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
+
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+
+    <string name="rationale_doc_picker">We need this pemission to read documents from device.</string>
+    <string name="rationale_photo_picker">We require this permission to select photo from gallery and camera.</string>
+
+
+    <string name="app_name">Legalex</string>
+    <string name="title_activity_add_news_feed">AddNewsFeed</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="default_notification_channel_id">com.legalax</string>
+    <string name="facebook_app_id">702847717025383</string>
+
+    <string name="fb_login_protocol_scheme">fb702847717025383</string>
+    <string name="get_to_know_more_legal_knowledge">Get to know more legal knowledge</string>
+    <string name="make_scheduled_video_calls">Make scheduled video calls</string>
+    <string name="setting">Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="rationale_video_app">This app needs access to your camera and mic to make video calls</string>
+    <string name="video_call">VIDEO CALL</string>
+    <string name="cancel1">Cancel</string>
+    <string name="p500_for_one_consultation_with_a_time_limit_of_30_mins">P500 for one consultation with a time limit of 30 mins.</string>
+    <string name="video_chat_consultation">*Video chat consultation</string>
+    <string name="purchase_credits">Purchase Credits</string>
+    <string name="remaining_credits">Remaining Credits</string>
+    <string name="use_balance">Use Balance</string>
+    <string name="purchase">Purchase</string>
+    <string name="credits">Credits</string>
+    <string name="consultation">Consultation</string>
+    <string name="total">Total</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="card_number">Card Number</string>
+    <string name="user_not_activated_yet">User is not activated yet</string>
+    <string name="add_credits">Add Credits</string>
+    <string name="empty_credits">Please enter credits</string>
+    <string name="admin_settings">ADMIN SETTINGS</string>
+    <string name="please_set_price_for_one_consultation_in_peso">Please set price for one consultation in Peso.</string>
+    <string name="set_price">Set Price</string>
+    <string name="set_privacy_info_for_all_users">*Set Privacy info for All users</string>
+    <string name="type_here">Type Here</string>
+    <string name="set_privacy">Set Privacy</string>
+    <string name="empty_price">Please enter the price</string>
+    <string name="setting_update_successfully">Settings updated successfully</string>
+    <string name="empty_privacy">Please enter the privacy</string>
+    <string name="lawyer_list_settings">Lawyer List Settings</string>
+    <string name="select_one_method">Select One Method</string>
+    <string name="terms_conditions">Terms and Conditions</string>
+    <string name="agree">Agree</string>
+    <string name="set_video_call_description_for_regular_users">*Set Video call Description for Regular users</string>
+    <string name="user_name">User name</string>
+    <string name="enter_user_name">Enter user name</string>
+    <string name="enter_remarks">Enter remarks</string>
+    <string name="remark">Remark</string>
+    <string name="enter_description">Enter description</string>
+    <string name="description">Description</string>
+    <string name="enter_mobile_no">Enter mobile no</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="enter_email">Enter email</string>
+    <string name="email">Email</string>
+    <string name="proceed">Proceed</string>
+    <string name="paypal">Paypal</string>
+    <string name="ipay">IPay</string>
+    <string name="paymongo">Paymongo</string>
+    <string name="msg_logout">Your session has been expired! Please login again</string>
+    <string name="search">Search</string>
+    <string name="click_here_to_read_legalex_privacy_policy">Click here to read \'Legalex Privacy Policy\'.</string>
+    <string name="agree_message">I have read and agree to the terms and conditions listed in the links above.</string>
+
+    <string name="permission_req">Permissions required</string>
+    <string name="dialog_camera">Camera</string>
+    <string name="dialog_gallery">Gallery</string>
+    <string name="dialog_select_your_choice">Select</string>
+    <string name="dialog_remove_image">Remove</string>
+    <string name="file_size_video">Please upload file upto 30 sec.</string>
+    <string name="add_news_feed">ADD NEWS FEED</string>
+    <string name="add_description">Add Description</string>
+    <string name="no_file_selected">No file selected</string>
+    <string name="submit_legal_problem">Submit legal problem</string>
+    <string name="legal_concern">Legal Concerns</string>
+    <string name="all_dates">All Dates</string>
+    <string name="all_categories">All Categories</string>
+    <string name="view">View</string>
+    <string name="all">All</string>
+    <string name="exact_date">Exact date</string>
+    <string name="oldest">Oldest</string>
+    <string name="recent">recent</string>
+    <string name="select_category">Select Category</string>
+    <string name="all_category">All Category</string>
+    <string name="go_to_proposal_button_on_">Go to submission button on homepage to see initial assessment from lawyers. Please give time for lawyers to preview and send their comments.</string>
+    <string name="title">Title</string>
+    <string name="proposal">Proposal</string>
+    <string name="pending">Pending</string>
+    <string name="approved">Approved</string>
+    <string name="accept">Accept</string>
+    <string name="select_date">Select Date</string>
+    <string name="documents">Documents</string>
+    <string name="request_document">Request \nDocument</string>
+    <string name="review_document">Review \nDocument</string>
+    <string name="review_document_">Review Document</string>
+    <string name="request_documents">Request Documents</string>
+    <string name="request">REQUEST</string>
+    <string name="proposal_bidding">Proposal Offering</string>
+    <string name="bid">Bid</string>
+    <string name="offer">Offer</string>
+    <string name="notes">Notes</string>
+    <string name="submitted">Submitted</string>
+    <string name="please_wait_while_we_find_lawyer">Please wait while we find lawyer</string>
+    <string name="no_data">No Data</string>
+    <string name="delete">Delete</string>
+    <string name="accept_bid">Accept bid</string>
+    <string name="payment">Payment</string>
+    <string name="online_click">Clicking online means you will be available to accept video calls from clients. While offline, you will still be able to receive messages, appointment requests, and legal concerns from clients. </string>
+    <string name="book_click">Laywer is currently offline but will respond to your appointment request as soon as he/she is available. If this appointment is urgent, feel free to select another lawyer. </string>
+    <string-array name="days_sunday_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+    <string-array name="shuffling_list">
+        <item>Create At-Accending</item>
+        <item>Create At-Decending</item>
+        <item>By First name-Accending</item>
+        <item>By First name-Decending</item>
+        <item>By Last name-Accending</item>
+        <item>By Last name-Decending</item>
+        <item>Age-Accending</item>
+        <item>Age-Decending</item>
+    </string-array>
+
+
+</resources>

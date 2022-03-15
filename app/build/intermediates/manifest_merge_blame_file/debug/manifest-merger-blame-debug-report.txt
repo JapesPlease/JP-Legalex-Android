@@ -1,0 +1,853 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="lax.lega.rv.com.legalax"
+4    android:versionCode="20"
+5    android:versionName="2.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml
+10
+11    <permission
+11-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:6:5-8:47
+12        android:name="lax.lega.rv.com.legalax.permission.C2D_MESSAGE"
+12-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:7:9-70
+13        android:protectionLevel="signature" />
+13-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:8:9-44
+14
+15    <uses-feature android:name="android.hardware.camera" />
+15-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:10:5-60
+15-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:10:19-57
+16    <uses-feature android:name="android.hardware.camera.autofocus" />
+16-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:11:5-70
+16-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:11:19-67
+17    <uses-feature
+17-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:12:5-14:36
+18        android:name="android.hardware.camera.front"
+18-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:13:9-53
+19        android:required="false" />
+19-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:14:9-33
+20    <uses-feature
+20-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:15:5-17:36
+21        android:name="android.hardware.microphone"
+21-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:16:9-51
+22        android:required="false" />
+22-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:17:9-33
+23
+24    <uses-permission android:name="android.permission.CALL_PHONE" />
+24-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:19:5-69
+24-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:19:22-66
+25    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+25-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:20:5-71
+25-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:20:22-68
+26    <uses-permission android:name="android.permission.CAMERA" />
+26-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:21:5-65
+26-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:21:22-62
+27    <uses-permission android:name="android.permission.GET_TASKS" />
+27-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:22:5-68
+27-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:22:22-65
+28    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+28-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:23:5-81
+28-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:23:22-78
+29    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+29-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:24:5-79
+29-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:24:22-76
+30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+30-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:25:5-79
+30-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:25:22-76
+31    <uses-permission
+31-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:26:5-75
+32        android:name="android.permission.READ_PHONE_STATE"
+32-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:26:22-72
+33        android:maxSdkVersion="22" />
+33-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:16:9-35
+34    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+34-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:27:5-80
+34-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:27:22-77
+35    <uses-permission android:name="android.permission.INTERNET" />
+35-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:28:5-67
+35-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:28:22-64
+36    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+36-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:29:5-81
+36-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:29:22-78
+37    <uses-permission android:name="android.hardware.sensor.proximity" />
+37-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:30:5-73
+37-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:30:22-70
+38    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+38-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:31:5-80
+38-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:31:22-77
+39    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+39-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:32:5-82
+39-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:32:22-79
+40    <uses-permission android:name="android.permission.WAKE_LOCK" />
+40-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:33:5-68
+40-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:33:22-65
+41    <uses-permission android:name="lax.lega.rv.com.legalax.permission.C2D_MESSAGE" />
+41-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:34:5-86
+41-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:34:22-83
+42
+43    <uses-permission-sdk-23 android:name="android.permission.RECORD_AUDIO" />
+43-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:36:5-78
+43-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:36:29-75
+44
+45    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+45-->[:IPHS_SDK_01062020:] /home/user/.gradle/caches/transforms-2/files-2.1/707a2acd8e20123f2665bab989e7d369/IPHS_SDK_01062020/AndroidManifest.xml:11:5-76
+45-->[:IPHS_SDK_01062020:] /home/user/.gradle/caches/transforms-2/files-2.1/707a2acd8e20123f2665bab989e7d369/IPHS_SDK_01062020/AndroidManifest.xml:11:22-73
+46    <uses-permission android:name="android.permission.BLUETOOTH" />
+46-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:13:5-68
+46-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:13:22-65
+47
+48    <uses-feature
+48-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:22:5-24:35
+49        android:glEsVersion="0x00020000"
+49-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:23:9-41
+50        android:required="true" />
+50-->[com.opentok.android:opentok-android-sdk:2.19.0] /home/user/.gradle/caches/transforms-2/files-2.1/4560e3d540997fb580df6be63af2a617/opentok-android-sdk-2.19.0/AndroidManifest.xml:24:9-32
+51
+52    <uses-permission android:name="android.permission.VIBRATE" />
+52-->[io.card:android-sdk:5.5.1] /home/user/.gradle/caches/transforms-2/files-2.1/2ce43a43faa78bb511514b9acddcdc5c/android-sdk-5.5.1/AndroidManifest.xml:10:5-66
+52-->[io.card:android-sdk:5.5.1] /home/user/.gradle/caches/transforms-2/files-2.1/2ce43a43faa78bb511514b9acddcdc5c/android-sdk-5.5.1/AndroidManifest.xml:10:22-63
+53    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+53-->[com.android.installreferrer:installreferrer:1.0] /home/user/.gradle/caches/transforms-2/files-2.1/38da91153f1f377244a32098cb18ed32/installreferrer-1.0/AndroidManifest.xml:9:5-110
+53-->[com.android.installreferrer:installreferrer:1.0] /home/user/.gradle/caches/transforms-2/files-2.1/38da91153f1f377244a32098cb18ed32/installreferrer-1.0/AndroidManifest.xml:9:22-107
+54
+55    <application
+55-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:38:5-259:19
+56        android:name="lax.lega.rv.com.legalax.application.App"
+56-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:39:9-40
+57        android:allowBackup="true"
+57-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:40:9-35
+58        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+58-->[com.android.support:support-compat:28.0.0] /home/user/.gradle/caches/transforms-2/files-2.1/5a402d6796ca9ade808f9f344d5fa898/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+59        android:debuggable="true"
+60        android:exported="true"
+60-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:41:9-32
+61        android:icon="@mipmap/app_logo"
+61-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:42:9-40
+62        android:label="@string/app_name"
+62-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:43:9-41
+63        android:largeHeap="true"
+63-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:44:9-33
+64        android:requestLegacyExternalStorage="true"
+64-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:48:9-52
+65        android:roundIcon="@mipmap/app_logo"
+65-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:45:9-45
+66        android:supportsRtl="true"
+66-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:46:9-35
+67        android:testOnly="true"
+68        android:theme="@style/AppTheme"
+68-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:49:9-40
+69        android:usesCleartextTraffic="true" >
+69-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:50:9-44
+70        <activity android:name="lax.lega.rv.com.legalax.paymongo.ThreeDSecureActivity" />
+70-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:51:9-76
+70-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:51:19-64
+71        <activity android:name="lax.lega.rv.com.legalax.paymongo.GCashActivity" >
+71-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:52:9-65:20
+71-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:52:19-57
+72            <intent-filter>
+72-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:53:13-58:29
+73                <action android:name="android.intent.action.VIEW" />
+73-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:17-69
+73-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:25-66
+74
+75                <category android:name="android.intent.category.DEFAULT" />
+75-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:17-76
+75-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:27-73
+76                <category android:name="android.intent.category.BROWSABLE" />
+76-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:17-78
+76-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:27-75
+77
+78                <data android:scheme="legalexsuccess" />
+78-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:17-57
+78-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:23-54
+79            </intent-filter>
+80            <intent-filter>
+80-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:59:13-64:29
+81                <action android:name="android.intent.action.VIEW" />
+81-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:17-69
+81-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:25-66
+82
+83                <category android:name="android.intent.category.DEFAULT" />
+83-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:17-76
+83-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:27-73
+84                <category android:name="android.intent.category.BROWSABLE" />
+84-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:17-78
+84-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:27-75
+85
+86                <data android:scheme="legalexfailure" />
+86-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:17-57
+86-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:23-54
+87            </intent-filter>
+88        </activity>
+89        <activity android:name="lax.lega.rv.com.legalax.paymongo.CreditCardActivity" />
+89-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:66:9-65
+89-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:66:19-62
+90        <activity android:name="lax.lega.rv.com.legalax.activities.DetailFormActivity" />
+90-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:67:9-67
+90-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:67:19-64
+91        <activity
+91-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:68:9-70:62
+92            android:name="com.ipay.IPayIHActivity"
+92-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:69:13-51
+93            android:configChanges="orientation|screenSize" />
+93-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:70:13-59
+94        <activity
+94-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:71:9-73:62
+95            android:name="com.ipay.IPayIHAcitivityR"
+95-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:72:13-53
+96            android:configChanges="orientation|screenSize" />
+96-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:73:13-59
+97        <activity android:name="lax.lega.rv.com.legalax.activities.WebViewActivity" />
+97-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:74:9-64
+97-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:74:19-61
+98        <activity android:name="lax.lega.rv.com.legalax.activities.SplashActivty" >
+98-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:75:9-81:20
+98-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:75:19-59
+99            <intent-filter>
+99-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:76:13-80:29
+100                <action android:name="android.intent.action.MAIN" />
+100-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:77:17-69
+100-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:77:25-66
+101
+102                <category android:name="android.intent.category.LAUNCHER" />
+102-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:79:17-77
+102-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:79:27-74
+103            </intent-filter>
+104        </activity>
+105        <activity
+105-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:82:9-85:47
+106            android:name="lax.lega.rv.com.legalax.activities.VideoCallActivity"
+106-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:83:13-57
+107            android:screenOrientation="sensorPortrait"
+107-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:84:13-55
+108            android:showOnLockScreen="true" />
+108-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:85:13-44
+109        <activity
+109-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:86:9-89:76
+110            android:name="lax.lega.rv.com.legalax.activities.PurchaseCreditsActivity"
+110-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:87:13-63
+111            android:screenOrientation="portrait"
+111-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:88:13-49
+112            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
+112-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:89:13-73
+113        <activity
+113-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:90:9-93:57
+114            android:name="lax.lega.rv.com.legalax.activities.Image_user"
+114-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:91:13-50
+115            android:screenOrientation="portrait"
+115-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:92:13-49
+116            android:windowSoftInputMode="stateHidden" />
+116-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:93:13-54
+117        <activity
+117-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:94:9-97:57
+118            android:name="lax.lega.rv.com.legalax.calling.CallScreenActivity"
+118-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:95:13-55
+119            android:screenOrientation="portrait"
+119-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:96:13-49
+120            android:windowSoftInputMode="stateHidden" />
+120-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:97:13-54
+121        <activity
+121-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:98:9-101:57
+122            android:name="lax.lega.rv.com.legalax.calling.IncomingCallScreenActivity"
+122-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:99:13-63
+123            android:screenOrientation="portrait"
+123-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:100:13-49
+124            android:windowSoftInputMode="stateHidden" />
+124-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:101:13-54
+125        <activity
+125-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:102:9-105:57
+126            android:name="lax.lega.rv.com.legalax.calling.PlaceCallActivity"
+126-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:103:13-54
+127            android:screenOrientation="portrait"
+127-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:104:13-49
+128            android:windowSoftInputMode="stateHidden" />
+128-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:105:13-54
+129        <activity
+129-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:106:9-110:40
+130            android:name="com.facebook.FacebookActivity"
+130-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:107:13-57
+131            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+131-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:108:13-96
+132            android:label="@string/app_name"
+132-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:109:13-45
+133            android:noHistory="true"
+133-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:110:13-37
+134            android:theme="@style/com_facebook_activity_theme" />
+134-->[com.facebook.android:facebook-common:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/e142f35430be6882c5ce14a61feb4fb6/facebook-common-6.1.0/AndroidManifest.xml:33:13-63
+135        <activity
+135-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:111:9-122:20
+136            android:name="com.facebook.CustomTabActivity"
+136-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:112:13-58
+137            android:exported="true" >
+137-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:113:13-36
+138            <intent-filter>
+138-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:114:13-121:29
+139                <action android:name="android.intent.action.VIEW" />
+139-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:17-69
+139-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:25-66
+140
+141                <category android:name="android.intent.category.DEFAULT" />
+141-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:17-76
+141-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:27-73
+142                <category android:name="android.intent.category.BROWSABLE" />
+142-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:17-78
+142-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:27-75
+143
+144                <data android:scheme="@string/fb_login_protocol_scheme" />
+144-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:17-57
+144-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:23-54
+145            </intent-filter>
+146            <intent-filter>
+146-->[com.facebook.android:facebook-common:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/e142f35430be6882c5ce14a61feb4fb6/facebook-common-6.1.0/AndroidManifest.xml:39:13-48:29
+147                <action android:name="android.intent.action.VIEW" />
+147-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:17-69
+147-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:54:25-66
+148
+149                <category android:name="android.intent.category.DEFAULT" />
+149-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:17-76
+149-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:55:27-73
+150                <category android:name="android.intent.category.BROWSABLE" />
+150-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:17-78
+150-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:56:27-75
+151
+152                <data
+152-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:17-57
+153                    android:host="cct.lax.lega.rv.com.legalax"
+154                    android:scheme="fbconnect" />
+154-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:57:23-54
+155            </intent-filter>
+156        </activity>
+157        <activity
+157-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:123:9-127:55
+158            android:name="lax.lega.rv.com.legalax.activities.MainActivity"
+158-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:124:13-52
+159            android:launchMode="singleTop"
+159-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:125:13-43
+160            android:screenOrientation="portrait"
+160-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:126:13-49
+161            android:windowSoftInputMode="adjustPan" />
+161-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:127:13-52
+162        <activity
+162-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:128:9-131:57
+163            android:name="lax.lega.rv.com.legalax.activities.AppointmentActivity"
+163-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:129:13-59
+164            android:screenOrientation="portrait"
+164-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:130:13-49
+165            android:windowSoftInputMode="stateHidden" />
+165-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:131:13-54
+166        <activity
+166-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:132:9-135:57
+167            android:name="lax.lega.rv.com.legalax.activities.OpenChatActivity"
+167-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:133:13-56
+168            android:screenOrientation="portrait"
+168-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:134:13-49
+169            android:windowSoftInputMode="stateHidden" />
+169-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:135:13-54
+170        <activity
+170-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:136:9-139:57
+171            android:name="lax.lega.rv.com.legalax.activities.ReceiverCallActivity"
+171-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:137:13-60
+172            android:screenOrientation="portrait"
+172-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:138:13-49
+173            android:windowSoftInputMode="stateHidden" />
+173-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:139:13-54
+174        <activity
+174-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:140:9-143:57
+175            android:name="lax.lega.rv.com.legalax.activities.SignupActivity"
+175-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:141:13-54
+176            android:screenOrientation="portrait"
+176-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:142:13-49
+177            android:windowSoftInputMode="stateHidden" />
+177-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:143:13-54
+178        <activity
+178-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:144:9-147:57
+179            android:name="lax.lega.rv.com.legalax.activities.LoginActivity"
+179-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:145:13-53
+180            android:screenOrientation="portrait"
+180-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:146:13-49
+181            android:windowSoftInputMode="stateHidden" />
+181-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:147:13-54
+182        <activity
+182-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:148:9-151:57
+183            android:name="lax.lega.rv.com.legalax.activities.VerificationActivity"
+183-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:149:13-60
+184            android:screenOrientation="portrait"
+184-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:150:13-49
+185            android:windowSoftInputMode="stateHidden" />
+185-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:151:13-54
+186        <activity
+186-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:152:9-155:57
+187            android:name="lax.lega.rv.com.legalax.activities.ForgotPasswordActivity"
+187-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:153:13-62
+188            android:screenOrientation="portrait"
+188-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:154:13-49
+189            android:windowSoftInputMode="stateHidden" />
+189-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:155:13-54
+190        <activity
+190-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:156:9-159:57
+191            android:name="lax.lega.rv.com.legalax.activities.ForgotPassword2Activity"
+191-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:157:13-63
+192            android:screenOrientation="portrait"
+192-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:158:13-49
+193            android:windowSoftInputMode="stateHidden" />
+193-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:159:13-54
+194        <activity
+194-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:160:9-163:57
+195            android:name="lax.lega.rv.com.legalax.activities.AwsomeActivity"
+195-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:161:13-54
+196            android:screenOrientation="portrait"
+196-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:162:13-49
+197            android:windowSoftInputMode="stateHidden" />
+197-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:163:13-54
+198        <activity
+198-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:164:9-167:57
+199            android:name="lax.lega.rv.com.legalax.activities.SenderCallActivityAnother"
+199-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:165:13-65
+200            android:screenOrientation="portrait"
+200-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:166:13-49
+201            android:windowSoftInputMode="stateHidden" />
+201-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:167:13-54
+202
+203        <meta-data
+203-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:169:9-171:55
+204            android:name="com.facebook.sdk.ApplicationId"
+204-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:170:13-58
+205            android:value="@string/facebook_app_id" />
+205-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:171:13-52
+206        <meta-data
+206-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:173:9-174:35
+207            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+207-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:173:20-75
+208            android:value="true" />
+208-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:174:13-33
+209        <meta-data
+209-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:176:9-178:72
+210            android:name="io.fabric.ApiKey"
+210-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:177:13-44
+211            android:value="4b409eb3af65be112830e89dd1f683a106acc369" />
+211-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:178:13-69
+212        <meta-data
+212-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:179:9-181:51
+213            android:name="com.google.firebase.messaging.default_notification_icon"
+213-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:180:13-83
+214            android:resource="@mipmap/app_logo" />
+214-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:181:13-48
+215        <meta-data
+215-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:182:9-184:54
+216            android:name="com.google.firebase.messaging.default_notification_color"
+216-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:183:13-84
+217            android:resource="@color/primary_dark" />
+217-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:184:13-51
+218        <meta-data
+218-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:185:9-187:71
+219            android:name="com.google.firebase.messaging.default_notification_channel_id"
+219-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:186:13-89
+220            android:value="@string/default_notification_channel_id" />
+220-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:187:13-68
+221
+222        <provider
+222-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:189:9-192:39
+223            android:name="com.facebook.FacebookContentProvider"
+223-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:190:13-64
+224            android:authorities="com.facebook.app.FacebookContentProvider"
+224-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:191:13-75
+225            android:exported="true" />
+225-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:192:13-36
+226
+227        <!-- <provider -->
+228        <!-- android:name="android.support.v4.content.FileProvider" -->
+229        <!-- android:authorities="vi.filepicker" -->
+230        <!-- android:exported="false" -->
+231        <!-- android:grantUriPermissions="true"> -->
+232        <!-- <meta-data -->
+233        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+234        <!-- android:resource="@xml/file_paths" /> -->
+235        <!-- </provider> -->
+236
+237        <provider
+237-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:204:9-212:20
+238            android:name="android.support.v4.content.FileProvider"
+238-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:205:13-67
+239            android:authorities="lax.lega.rv.com.legalax.provider"
+239-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:206:13-67
+240            android:exported="false"
+240-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:207:13-37
+241            android:grantUriPermissions="true" >
+241-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:208:13-47
+242            <meta-data
+242-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:209:13-211:54
+243                android:name="android.support.FILE_PROVIDER_PATHS"
+243-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:210:17-67
+244                android:resource="@xml/file_paths" />
+244-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:211:17-51
+245        </provider>
+246
+247        <receiver
+247-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:214:9-217:39
+248            android:name="lax.lega.rv.com.legalax.common.DetectBroadcastReciever"
+248-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:215:13-59
+249            android:enabled="true"
+249-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:216:13-35
+250            android:exported="true" />
+250-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:217:13-36
+251        <receiver
+251-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:218:9-226:20
+252            android:name="lax.lega.rv.com.legalax.common.DownloadBroadcastReciever"
+252-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:219:13-61
+253            android:enabled="true"
+253-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:220:13-35
+254            android:exported="true" >
+254-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:221:13-36
+255            <intent-filter>
+255-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:222:13-225:29
+256                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+256-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:223:17-82
+256-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:223:25-79
+257                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+257-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:224:17-94
+257-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:224:25-91
+258            </intent-filter>
+259        </receiver>
+260
+261        <service android:name="lax.lega.rv.com.legalax.activities.SinchService" />
+261-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:228:9-60
+261-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:228:18-57
+262        <service
+262-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:229:9-237:19
+263            android:name="lax.lega.rv.com.legalax.fcm.MyFirebaseMessagingService"
+263-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:230:13-59
+264            android:enabled="true"
+264-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:231:13-35
+265            android:exported="false"
+265-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:232:13-37
+266            android:stopWithTask="false" >
+266-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:233:13-41
+267            <intent-filter>
+267-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:234:13-236:29
+268                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+268-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:235:17-78
+268-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:235:25-75
+269            </intent-filter>
+270        </service>
+271        <service android:name="lax.lega.rv.com.legalax.fcm.FirebaseIDService" >
+271-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:238:9-242:19
+271-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:238:18-55
+272            <intent-filter>
+272-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:239:13-241:29
+273                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+273-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:17-80
+273-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:25-77
+274            </intent-filter>
+275        </service>
+276        <service
+276-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:243:9-245:40
+277            android:name="com.paypal.android.sdk.payments.PayPalService"
+277-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:244:13-73
+278            android:exported="false" />
+278-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:245:13-37
+279
+280        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+280-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:247:9-84
+280-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:247:19-81
+281        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+281-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:248:9-82
+281-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:248:19-79
+282        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+282-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:249:9-90
+282-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:249:19-87
+283        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+283-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:250:9-91
+283-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:250:19-88
+284        <activity
+284-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:251:9-253:66
+285            android:name="io.card.payment.CardIOActivity"
+285-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:252:13-58
+286            android:configChanges="keyboardHidden|orientation" />
+286-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:253:13-63
+287        <activity android:name="io.card.payment.DataEntryActivity" />
+287-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:254:9-70
+287-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:254:19-67
+288
+289        <uses-library
+289-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:256:9-258:40
+290            android:name="org.apache.http.legacy"
+290-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:257:13-50
+291            android:required="false" />
+291-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:258:13-37
+292
+293        <activity
+293-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:9-20:62
+294            android:name="droidninja.filepicker.FilePickerActivity"
+294-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-68
+295            android:configChanges="orientation|screenSize" />
+295-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-59
+296        <activity
+296-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-23:62
+297            android:name="droidninja.filepicker.MediaDetailsActivity"
+297-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-70
+298            android:configChanges="orientation|screenSize" />
+298-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-59
+299
+300        <provider
+300-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:9-33:20
+301            android:name="droidninja.filepicker.utils.FilePickerProvider"
+301-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-74
+302            android:authorities="lax.lega.rv.com.legalax.droidninja.filepicker.provider"
+302-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:13-82
+303            android:exported="false"
+303-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-37
+304            android:grantUriPermissions="true" >
+304-->[:filepicker] /home/user/Documents/Legalex-JP-Android/filepicker/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-47
+305            <meta-data
+305-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:209:13-211:54
+306                android:name="android.support.FILE_PROVIDER_PATHS"
+306-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:210:17-67
+307                android:resource="@xml/provider_paths" />
+307-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:211:17-51
+308        </provider>
+309
+310        <activity
+310-->[com.karumi:dexter:5.0.0] /home/user/.gradle/caches/transforms-2/files-2.1/c2bcba4a24ef7c374202218a6e5916b6/dexter-5.0.0/AndroidManifest.xml:27:9-29:72
+311            android:name="com.karumi.dexter.DexterActivity"
+311-->[com.karumi:dexter:5.0.0] /home/user/.gradle/caches/transforms-2/files-2.1/c2bcba4a24ef7c374202218a6e5916b6/dexter-5.0.0/AndroidManifest.xml:28:13-60
+312            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+312-->[com.karumi:dexter:5.0.0] /home/user/.gradle/caches/transforms-2/files-2.1/c2bcba4a24ef7c374202218a6e5916b6/dexter-5.0.0/AndroidManifest.xml:29:13-69
+313        <activity
+313-->[pub.devrel:easypermissions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ab9ac56d59bdf5fbce053bd1333d1350/easypermissions-1.1.1/AndroidManifest.xml:12:9-16:66
+314            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
+314-->[pub.devrel:easypermissions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ab9ac56d59bdf5fbce053bd1333d1350/easypermissions-1.1.1/AndroidManifest.xml:13:13-86
+315            android:exported="false"
+315-->[pub.devrel:easypermissions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ab9ac56d59bdf5fbce053bd1333d1350/easypermissions-1.1.1/AndroidManifest.xml:14:13-37
+316            android:label=""
+316-->[pub.devrel:easypermissions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ab9ac56d59bdf5fbce053bd1333d1350/easypermissions-1.1.1/AndroidManifest.xml:15:13-29
+317            android:theme="@style/EasyPermissions.Transparent" />
+317-->[pub.devrel:easypermissions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ab9ac56d59bdf5fbce053bd1333d1350/easypermissions-1.1.1/AndroidManifest.xml:16:13-63
+318        <activity android:name="com.facebook.CustomTabMainActivity" />
+318-->[com.facebook.android:facebook-common:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/e142f35430be6882c5ce14a61feb4fb6/facebook-common-6.1.0/AndroidManifest.xml:34:9-71
+318-->[com.facebook.android:facebook-common:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/e142f35430be6882c5ce14a61feb4fb6/facebook-common-6.1.0/AndroidManifest.xml:34:19-68
+319        <activity
+319-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:23:9-29:75
+320            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+320-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:24:13-85
+321            android:excludeFromRecents="true"
+321-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:25:13-46
+322            android:exported="true"
+322-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:26:13-36
+323            android:launchMode="singleInstance"
+323-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:27:13-48
+324            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+324-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:28:13-102
+325            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+325-->[com.google.firebase:firebase-auth:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/d3d686d1fcf3203031b141c66057700f/firebase-auth-11.8.0/AndroidManifest.xml:29:13-72
+326        <!--
+327             FirebaseMessagingService performs security checks at runtime,
+328             no need for explicit permissions despite exported="true"
+329        -->
+330        <service
+330-->[com.google.firebase:firebase-messaging:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/8a60d24502efbb895554cde9a7a9c94e/firebase-messaging-11.8.0/AndroidManifest.xml:28:9-34:19
+331            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+331-->[com.google.firebase:firebase-messaging:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/8a60d24502efbb895554cde9a7a9c94e/firebase-messaging-11.8.0/AndroidManifest.xml:29:13-82
+332            android:exported="true" >
+332-->[com.google.firebase:firebase-messaging:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/8a60d24502efbb895554cde9a7a9c94e/firebase-messaging-11.8.0/AndroidManifest.xml:30:13-36
+333            <intent-filter android:priority="-500" >
+333-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:234:13-236:29
+334                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+334-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:235:17-78
+334-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:235:25-75
+335            </intent-filter>
+336        </service>
+337
+338        <activity
+338-->[com.google.android.gms:play-services-base:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/43d777d66de4fd80e8bd0aa227b512db/play-services-base-11.8.0/AndroidManifest.xml:23:9-26:75
+339            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+339-->[com.google.android.gms:play-services-base:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/43d777d66de4fd80e8bd0aa227b512db/play-services-base-11.8.0/AndroidManifest.xml:24:13-79
+340            android:exported="false"
+340-->[com.google.android.gms:play-services-base:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/43d777d66de4fd80e8bd0aa227b512db/play-services-base-11.8.0/AndroidManifest.xml:25:13-37
+341            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+341-->[com.google.android.gms:play-services-base:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/43d777d66de4fd80e8bd0aa227b512db/play-services-base-11.8.0/AndroidManifest.xml:26:13-72
+342
+343        <receiver
+343-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:28:9-32:20
+344            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+344-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:29:13-85
+345            android:enabled="true"
+345-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:30:13-35
+346            android:exported="false" >
+346-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:31:13-37
+347        </receiver>
+348        <receiver
+348-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:33:9-41:20
+349            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+349-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:34:13-100
+350            android:enabled="true"
+350-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:35:13-35
+351            android:exported="true"
+351-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:36:13-36
+352            android:permission="android.permission.INSTALL_PACKAGES" >
+352-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:37:13-69
+353            <intent-filter>
+353-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:38:13-40:29
+354                <action android:name="com.android.vending.INSTALL_REFERRER" />
+354-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:39:17-79
+354-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:39:25-76
+355            </intent-filter>
+356        </receiver>
+357
+358        <service
+358-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:43:9-46:40
+359            android:name="com.google.android.gms.measurement.AppMeasurementService"
+359-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:44:13-84
+360            android:enabled="true"
+360-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:45:13-35
+361            android:exported="false" />
+361-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:46:13-37
+362        <service
+362-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:47:9-51:72
+363            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+363-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:48:13-87
+364            android:enabled="true"
+364-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:49:13-35
+365            android:exported="false"
+365-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:50:13-37
+366            android:permission="android.permission.BIND_JOB_SERVICE" />
+366-->[com.google.firebase:firebase-analytics:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/17c42fd15c249ba9ab356a5dffc14632/firebase-analytics-11.8.0/AndroidManifest.xml:51:13-69
+367
+368        <receiver
+368-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:35:9-44:20
+369            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+369-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:36:13-78
+370            android:exported="true"
+370-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:37:13-36
+371            android:permission="com.google.android.c2dm.permission.SEND" >
+371-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:38:13-73
+372            <intent-filter>
+372-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:39:13-43:29
+373                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+373-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:40:17-81
+373-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:40:25-78
+374
+375                <category android:name="lax.lega.rv.com.legalax" />
+375-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:42:17-61
+375-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:42:27-58
+376            </intent-filter>
+377        </receiver>
+378        <!--
+379             FirebaseInstanceIdService performs security checks at runtime,
+380             no need for explicit permissions despite exported="true"
+381        -->
+382        <service
+382-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:50:9-56:19
+383            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+383-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:51:13-77
+384            android:exported="true" >
+384-->[com.google.firebase:firebase-iid:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/ef0caf95f40eeb3c7c2d04ce17031506/firebase-iid-11.8.0/AndroidManifest.xml:52:13-36
+385            <intent-filter android:priority="-500" >
+385-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:239:13-241:29
+386                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+386-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:17-80
+386-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:25-77
+387            </intent-filter>
+388        </service>
+389
+390        <provider
+390-->[com.google.firebase:firebase-common:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/dcadbe761942c63eca25d832e340f279/firebase-common-11.8.0/AndroidManifest.xml:8:9-12:39
+391            android:name="com.google.firebase.provider.FirebaseInitProvider"
+391-->[com.google.firebase:firebase-common:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/dcadbe761942c63eca25d832e340f279/firebase-common-11.8.0/AndroidManifest.xml:9:13-77
+392            android:authorities="lax.lega.rv.com.legalax.firebaseinitprovider"
+392-->[com.google.firebase:firebase-common:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/dcadbe761942c63eca25d832e340f279/firebase-common-11.8.0/AndroidManifest.xml:10:13-72
+393            android:exported="false"
+393-->[com.google.firebase:firebase-common:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/dcadbe761942c63eca25d832e340f279/firebase-common-11.8.0/AndroidManifest.xml:11:13-37
+394            android:initOrder="100" />
+394-->[com.google.firebase:firebase-common:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/dcadbe761942c63eca25d832e340f279/firebase-common-11.8.0/AndroidManifest.xml:12:13-36
+395
+396        <meta-data
+396-->[com.google.android.gms:play-services-basement:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/eb1b91c8a836b1efb6b8b59246011479/play-services-basement-11.8.0/AndroidManifest.xml:23:9-25:69
+397            android:name="com.google.android.gms.version"
+397-->[com.google.android.gms:play-services-basement:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/eb1b91c8a836b1efb6b8b59246011479/play-services-basement-11.8.0/AndroidManifest.xml:24:13-58
+398            android:value="@integer/google_play_services_version" />
+398-->[com.google.android.gms:play-services-basement:11.8.0] /home/user/.gradle/caches/transforms-2/files-2.1/eb1b91c8a836b1efb6b8b59246011479/play-services-basement-11.8.0/AndroidManifest.xml:25:13-66
+399
+400        <service android:name="com.sinch.android.rtc.internal.client.fcm.InstanceIDTokenService" >
+400-->[:sinch-android-rtc:3.12.3] /home/user/.gradle/caches/transforms-2/files-2.1/b1fe242a6fba3e7809cc914162d93a3b/sinch-android-rtc-3.12.3/AndroidManifest.xml:12:9-16:19
+400-->[:sinch-android-rtc:3.12.3] /home/user/.gradle/caches/transforms-2/files-2.1/b1fe242a6fba3e7809cc914162d93a3b/sinch-android-rtc-3.12.3/AndroidManifest.xml:12:18-97
+401            <intent-filter>
+401-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:239:13-241:29
+402                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+402-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:17-80
+402-->/home/user/Documents/Legalex-JP-Android/app/src/main/AndroidManifest.xml:240:25-77
+403            </intent-filter>
+404        </service>
+405
+406        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+406-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:17:9-96
+406-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:17:19-93
+407        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+407-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:18:9-97
+407-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:18:19-94
+408        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+408-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:19:9-94
+408-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:19:19-91
+409        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+409-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:20:9-97
+409-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:20:19-94
+410        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+410-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:21:9-98
+410-->[com.paypal.sdk:paypal-android-sdk:2.16.0] /home/user/.gradle/caches/transforms-2/files-2.1/b8253433fe4521f3836b47b305c7b8e6/paypal-android-sdk-2.16.0/AndroidManifest.xml:21:19-95
+411
+412        <provider
+412-->[android.arch.lifecycle:extensions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ff02dcf66d67d2e5e6658d49c3471720/extensions-1.1.1/AndroidManifest.xml:23:9-27:43
+413            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+413-->[android.arch.lifecycle:extensions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ff02dcf66d67d2e5e6658d49c3471720/extensions-1.1.1/AndroidManifest.xml:24:13-83
+414            android:authorities="lax.lega.rv.com.legalax.lifecycle-trojan"
+414-->[android.arch.lifecycle:extensions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ff02dcf66d67d2e5e6658d49c3471720/extensions-1.1.1/AndroidManifest.xml:25:13-68
+415            android:exported="false"
+415-->[android.arch.lifecycle:extensions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ff02dcf66d67d2e5e6658d49c3471720/extensions-1.1.1/AndroidManifest.xml:26:13-37
+416            android:multiprocess="true" />
+416-->[android.arch.lifecycle:extensions:1.1.1] /home/user/.gradle/caches/transforms-2/files-2.1/ff02dcf66d67d2e5e6658d49c3471720/extensions-1.1.1/AndroidManifest.xml:27:13-40
+417        <provider
+417-->[com.crashlytics.sdk.android:crashlytics:2.9.6] /home/user/.gradle/caches/transforms-2/files-2.1/0063f090fb22aa2b67caf4527d9e6316/crashlytics-2.9.6/AndroidManifest.xml:12:9-16:38
+418            android:name="com.crashlytics.android.CrashlyticsInitProvider"
+418-->[com.crashlytics.sdk.android:crashlytics:2.9.6] /home/user/.gradle/caches/transforms-2/files-2.1/0063f090fb22aa2b67caf4527d9e6316/crashlytics-2.9.6/AndroidManifest.xml:13:13-75
+419            android:authorities="lax.lega.rv.com.legalax.crashlyticsinitprovider"
+419-->[com.crashlytics.sdk.android:crashlytics:2.9.6] /home/user/.gradle/caches/transforms-2/files-2.1/0063f090fb22aa2b67caf4527d9e6316/crashlytics-2.9.6/AndroidManifest.xml:14:13-75
+420            android:exported="false"
+420-->[com.crashlytics.sdk.android:crashlytics:2.9.6] /home/user/.gradle/caches/transforms-2/files-2.1/0063f090fb22aa2b67caf4527d9e6316/crashlytics-2.9.6/AndroidManifest.xml:15:13-37
+421            android:initOrder="90" />
+421-->[com.crashlytics.sdk.android:crashlytics:2.9.6] /home/user/.gradle/caches/transforms-2/files-2.1/0063f090fb22aa2b67caf4527d9e6316/crashlytics-2.9.6/AndroidManifest.xml:16:13-35
+422        <!--
+423         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+424         with the application context. This config is merged in with the host app's manifest,
+425         but there can only be one provider with the same authority activated at any given
+426         point; so if the end user has two or more different apps that use Facebook SDK, only the
+427         first one will be able to use the provider. To work around this problem, we use the
+428         following placeholder in the authority to identify each host application as if it was
+429         a completely different provider.
+430        -->
+431        <provider
+431-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:39:9-42:40
+432            android:name="com.facebook.internal.FacebookInitProvider"
+432-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:40:13-70
+433            android:authorities="lax.lega.rv.com.legalax.FacebookInitProvider"
+433-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:41:13-72
+434            android:exported="false" />
+434-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:42:13-37
+435
+436        <receiver
+436-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:44:9-50:20
+437            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+437-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:45:13-86
+438            android:exported="false" >
+438-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:46:13-37
+439            <intent-filter>
+439-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:47:13-49:29
+440                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+440-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:48:17-95
+440-->[com.facebook.android:facebook-core:6.1.0] /home/user/.gradle/caches/transforms-2/files-2.1/f5d80169c0829e9c7893fc0060f08615/facebook-core-6.1.0/AndroidManifest.xml:48:25-92
+441            </intent-filter>
+442        </receiver>
+443    </application>
+444
+445</manifest>

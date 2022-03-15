@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/backpress1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/icn_forwardback"/>
+        </RelativeLayout>
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            android:id="@+id/add_p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/backpress"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:text="update NEWS FEED"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="end"
+            android:paddingRight="12dp"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profile"
+
+                                       android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icn_profile"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Title:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/outline_single_green"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Type your Title"
+                        android:padding="4dp"
+                        android:singleLine="true"
+
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/colorPrimary"
+                        android:textCursorDrawable="@drawable/color_cursor"/>
+                </LinearLayout>
+
+                <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Description:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/outline_single_green"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_description1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Type your description"
+                        android:padding="4dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:textColor="@color/colorPrimary"
+                        android:textCursorDrawable="@drawable/color_cursor"/>
+                </LinearLayout>
+
+                <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Author Name:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/outline_single_green"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_author_name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Type your Author name"
+                        android:padding="4dp"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+
+                        android:textColor="@color/colorPrimary"
+                        android:textCursorDrawable="@drawable/color_cursor"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Article Date:"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_calender1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/outline_single_green"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/calender"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@color/grey_500"/>
+
+                        <lax.lega.rv.com.legalax.common.CustomTextviewHelvic
+                            android:id="@+id/txt_day1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:singleLine="true"
+                            android:text="Tue, Sept 25 2018"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Story:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/outline_single_green"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_story1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:hint="Type your Story"
+                        android:padding="4dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:textColor="@color/colorPrimary"
+                        android:textCursorDrawable="@drawable/color_cursor"/>
+                </LinearLayout>
+
+                <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Add photo or video:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"/>
+
+                <ImageView
+                    android:id="@+id/img_feed_gllery1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/icn_add_photo"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_submit1"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/icn_button_bg"
+                    android:gravity="center"
+                    >
+
+                    <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="SUBMIT"
+                        android:textColor="@color/white"
+                        android:textSize="24dp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

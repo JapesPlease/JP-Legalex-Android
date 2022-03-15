@@ -1,0 +1,158 @@
+com/applikeysolutions/cosmocalendar/settings/lists/DisabledDaysCriteriaType.java
+ com.applikeysolutions.cosmocalendar.settings.lists.DisabledDaysCriteriaType
+com/applikeysolutions/cosmocalendar/selection/criteria/BaseCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.BaseCriteria
+com/applikeysolutions/cosmocalendar/adapter/MonthAdapter.java
+ com.applikeysolutions.cosmocalendar.adapter.MonthAdapter
+ com.applikeysolutions.cosmocalendar.adapter.MonthAdapter$1
+ com.applikeysolutions.cosmocalendar.adapter.MonthAdapter$MonthAdapterBuilder
+com/applikeysolutions/cosmocalendar/utils/snap/GravityPagerSnapHelper.java
+ com.applikeysolutions.cosmocalendar.utils.snap.GravityPagerSnapHelper
+com/applikeysolutions/cosmocalendar/utils/snap/GravityDelegate.java
+ com.applikeysolutions.cosmocalendar.utils.snap.GravityDelegate
+ com.applikeysolutions.cosmocalendar.utils.snap.GravityDelegate$1
+com/applikeysolutions/cosmocalendar/selection/selectionbar/SelectionBarContentItem.java
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.SelectionBarContentItem
+com/applikeysolutions/cosmocalendar/settings/lists/CalendarListsInterface.java
+ com.applikeysolutions.cosmocalendar.settings.lists.CalendarListsInterface
+com/applikeysolutions/cosmocalendar/settings/lists/connected_days/ConnectedDays.java
+ com.applikeysolutions.cosmocalendar.settings.lists.connected_days.ConnectedDays
+com/applikeysolutions/cosmocalendar/settings/selection/SelectionInterface.java
+ com.applikeysolutions.cosmocalendar.settings.selection.SelectionInterface
+com/applikeysolutions/cosmocalendar/selection/OnDaySelectedListener.java
+ com.applikeysolutions.cosmocalendar.selection.OnDaySelectedListener
+com/applikeysolutions/cosmocalendar/settings/date/DateInterface.java
+ com.applikeysolutions.cosmocalendar.settings.date.DateInterface
+com/applikeysolutions/cosmocalendar/view/delegate/BaseDelegate.java
+ com.applikeysolutions.cosmocalendar.view.delegate.BaseDelegate
+com/applikeysolutions/cosmocalendar/model/Day.java
+ com.applikeysolutions.cosmocalendar.model.Day
+com/applikeysolutions/cosmocalendar/selection/MultipleSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.MultipleSelectionManager
+com/applikeysolutions/cosmocalendar/settings/SettingsManager.java
+ com.applikeysolutions.cosmocalendar.settings.SettingsManager
+com/applikeysolutions/cosmocalendar/selection/selectionbar/SelectionBarTitleItem.java
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.SelectionBarTitleItem
+com/applikeysolutions/cosmocalendar/view/delegate/DayDelegate.java
+ com.applikeysolutions.cosmocalendar.view.delegate.DayDelegate
+ com.applikeysolutions.cosmocalendar.view.delegate.DayDelegate$1
+com/applikeysolutions/cosmocalendar/selection/SingleSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.SingleSelectionManager
+com/applikeysolutions/cosmocalendar/view/CalendarView.java
+ com.applikeysolutions.cosmocalendar.view.CalendarView
+ com.applikeysolutions.cosmocalendar.view.CalendarView$1
+ com.applikeysolutions.cosmocalendar.view.CalendarView$2
+ com.applikeysolutions.cosmocalendar.view.CalendarView$3
+com/applikeysolutions/cosmocalendar/selection/NoneSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.NoneSelectionManager
+com/applikeysolutions/cosmocalendar/settings/lists/CalendarListsModel.java
+ com.applikeysolutions.cosmocalendar.settings.lists.CalendarListsModel
+ com.applikeysolutions.cosmocalendar.settings.lists.CalendarListsModel$1
+com/applikeysolutions/cosmocalendar/settings/appearance/ConnectedDayIconPosition.java
+ com.applikeysolutions.cosmocalendar.settings.appearance.ConnectedDayIconPosition
+com/applikeysolutions/cosmocalendar/view/SlowdownRecyclerView.java
+ com.applikeysolutions.cosmocalendar.view.SlowdownRecyclerView
+ com.applikeysolutions.cosmocalendar.view.SlowdownRecyclerView$1
+com/applikeysolutions/customizablecalendar/BuildConfig.java
+ com.applikeysolutions.customizablecalendar.BuildConfig
+com/applikeysolutions/cosmocalendar/selection/selectionbar/MultipleSelectionBarAdapter.java
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.MultipleSelectionBarAdapter
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.MultipleSelectionBarAdapter$ContentViewHolder
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.MultipleSelectionBarAdapter$ContentViewHolder$1
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.MultipleSelectionBarAdapter$ListItemClickListener
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.MultipleSelectionBarAdapter$TitleViewHolder
+com/applikeysolutions/cosmocalendar/settings/lists/DisabledDaysCriteria.java
+ com.applikeysolutions.cosmocalendar.settings.lists.DisabledDaysCriteria
+ com.applikeysolutions.cosmocalendar.settings.lists.DisabledDaysCriteria$1
+com/applikeysolutions/cosmocalendar/utils/Constants.java
+ com.applikeysolutions.cosmocalendar.utils.Constants
+com/applikeysolutions/cosmocalendar/FetchMonthsAsyncTask.java
+ com.applikeysolutions.cosmocalendar.FetchMonthsAsyncTask
+ com.applikeysolutions.cosmocalendar.FetchMonthsAsyncTask$FetchParams
+com/applikeysolutions/cosmocalendar/selection/BaseCriteriaSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.BaseCriteriaSelectionManager
+com/applikeysolutions/cosmocalendar/settings/appearance/AppearanceInterface.java
+ com.applikeysolutions.cosmocalendar.settings.appearance.AppearanceInterface
+com/applikeysolutions/cosmocalendar/utils/WeekDay.java
+ com.applikeysolutions.cosmocalendar.utils.WeekDay
+com/applikeysolutions/cosmocalendar/utils/SelectionType.java
+ com.applikeysolutions.cosmocalendar.utils.SelectionType
+com/applikeysolutions/cosmocalendar/adapter/viewholder/BaseDayHolder.java
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.BaseDayHolder
+com/applikeysolutions/cosmocalendar/view/ItemViewType.java
+ com.applikeysolutions.cosmocalendar.view.ItemViewType
+com/applikeysolutions/cosmocalendar/selection/RangeSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.RangeSelectionManager
+com/applikeysolutions/cosmocalendar/adapter/viewholder/DayOfWeekHolder.java
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.DayOfWeekHolder
+com/applikeysolutions/cosmocalendar/view/MonthView.java
+ com.applikeysolutions.cosmocalendar.view.MonthView
+com/applikeysolutions/cosmocalendar/selection/criteria/month/NextMonthCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.month.NextMonthCriteria
+com/applikeysolutions/cosmocalendar/settings/appearance/AppearanceModel.java
+ com.applikeysolutions.cosmocalendar.settings.appearance.AppearanceModel
+com/applikeysolutions/cosmocalendar/view/customviews/CircleAnimationTextView.java
+ com.applikeysolutions.cosmocalendar.view.customviews.CircleAnimationTextView
+ com.applikeysolutions.cosmocalendar.view.customviews.CircleAnimationTextView$1
+ com.applikeysolutions.cosmocalendar.view.customviews.CircleAnimationTextView$2
+ com.applikeysolutions.cosmocalendar.view.customviews.CircleAnimationTextView$CircularFillAnimation
+com/applikeysolutions/cosmocalendar/settings/selection/SelectionModel.java
+ com.applikeysolutions.cosmocalendar.settings.selection.SelectionModel
+com/applikeysolutions/cosmocalendar/settings/lists/connected_days/ConnectedDaysManager.java
+ com.applikeysolutions.cosmocalendar.settings.lists.connected_days.ConnectedDaysManager
+com/applikeysolutions/cosmocalendar/dialog/CalendarDialog.java
+ com.applikeysolutions.cosmocalendar.dialog.CalendarDialog
+com/applikeysolutions/cosmocalendar/view/customviews/SquareTextView.java
+ com.applikeysolutions.cosmocalendar.view.customviews.SquareTextView
+com/applikeysolutions/cosmocalendar/selection/criteria/month/PreviousMonthCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.month.PreviousMonthCriteria
+com/applikeysolutions/cosmocalendar/view/delegate/MonthDelegate.java
+ com.applikeysolutions.cosmocalendar.view.delegate.MonthDelegate
+com/applikeysolutions/cosmocalendar/model/Month.java
+ com.applikeysolutions.cosmocalendar.model.Month
+com/applikeysolutions/cosmocalendar/selection/SelectionState.java
+ com.applikeysolutions.cosmocalendar.selection.SelectionState
+com/applikeysolutions/cosmocalendar/selection/criteria/month/BaseMonthCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.month.BaseMonthCriteria
+com/applikeysolutions/cosmocalendar/adapter/DaysAdapter.java
+ com.applikeysolutions.cosmocalendar.adapter.DaysAdapter
+ com.applikeysolutions.cosmocalendar.adapter.DaysAdapter$1
+ com.applikeysolutions.cosmocalendar.adapter.DaysAdapter$DaysAdapterBuilder
+ com.applikeysolutions.cosmocalendar.adapter.DaysAdapter$calenderclick
+com/applikeysolutions/cosmocalendar/adapter/viewholder/OtherDayHolder.java
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.OtherDayHolder
+com/applikeysolutions/cosmocalendar/utils/DateUtils.java
+ com.applikeysolutions.cosmocalendar.utils.DateUtils
+com/applikeysolutions/cosmocalendar/selection/criteria/WeekDayCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.WeekDayCriteria
+com/applikeysolutions/cosmocalendar/utils/DayFlag.java
+ com.applikeysolutions.cosmocalendar.utils.DayFlag
+com/applikeysolutions/cosmocalendar/adapter/viewholder/DayHolder.java
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.DayHolder
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.DayHolder$1
+com/applikeysolutions/cosmocalendar/selection/selectionbar/SelectionBarItem.java
+ com.applikeysolutions.cosmocalendar.selection.selectionbar.SelectionBarItem
+com/applikeysolutions/cosmocalendar/dialog/OnDaysSelectionListener.java
+ com.applikeysolutions.cosmocalendar.dialog.OnDaysSelectionListener
+com/applikeysolutions/cosmocalendar/view/delegate/OtherDayDelegate.java
+ com.applikeysolutions.cosmocalendar.view.delegate.OtherDayDelegate
+com/applikeysolutions/cosmocalendar/listeners/OnMonthChangeListener.java
+ com.applikeysolutions.cosmocalendar.listeners.OnMonthChangeListener
+com/applikeysolutions/cosmocalendar/selection/criteria/month/CurrentMonthCriteria.java
+ com.applikeysolutions.cosmocalendar.selection.criteria.month.CurrentMonthCriteria
+com/applikeysolutions/cosmocalendar/utils/snap/GravitySnapHelper.java
+ com.applikeysolutions.cosmocalendar.utils.snap.GravitySnapHelper
+ com.applikeysolutions.cosmocalendar.utils.snap.GravitySnapHelper$SnapListener
+com/applikeysolutions/cosmocalendar/settings/date/DateModel.java
+ com.applikeysolutions.cosmocalendar.settings.date.DateModel
+com/applikeysolutions/cosmocalendar/model/DayOfWeek.java
+ com.applikeysolutions.cosmocalendar.model.DayOfWeek
+com/applikeysolutions/cosmocalendar/view/delegate/DayOfWeekDelegate.java
+ com.applikeysolutions.cosmocalendar.view.delegate.DayOfWeekDelegate
+com/applikeysolutions/cosmocalendar/utils/CalendarUtils.java
+ com.applikeysolutions.cosmocalendar.utils.CalendarUtils
+ com.applikeysolutions.cosmocalendar.utils.CalendarUtils$1
+com/applikeysolutions/cosmocalendar/adapter/viewholder/MonthHolder.java
+ com.applikeysolutions.cosmocalendar.adapter.viewholder.MonthHolder
+com/applikeysolutions/cosmocalendar/selection/BaseSelectionManager.java
+ com.applikeysolutions.cosmocalendar.selection.BaseSelectionManager

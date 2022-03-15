@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Legalex-JP-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Legalex-JP-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Legalex-JP-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Legalex-JP-Android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ccp/Legalex-JP-Android.ccp.iml" filepath="$PROJECT_DIR$/.idea/modules/ccp/Legalex-JP-Android.ccp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cosmocalendar/Legalex-JP-Android.cosmocalendar.iml" filepath="$PROJECT_DIR$/.idea/modules/cosmocalendar/Legalex-JP-Android.cosmocalendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/Legalex-JP-Android.filepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/Legalex-JP-Android.filepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Legalex-JP-Android.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Legalex-JP-Android.library.iml" />
+    </modules>
+  </component>
+</project>

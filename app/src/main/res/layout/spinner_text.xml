@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lax.lega.rv.com.legalax.common.CustomTextviewBold
+    xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/cust_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:minWidth="246dp"
+          android:text="mmmmmmm"
+          android:textColor="@color/colorPrimary"
+          android:textIsSelectable="false"
+          android:textSize="22sp"/>

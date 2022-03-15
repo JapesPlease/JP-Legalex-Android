@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.RequestDocumentFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_marginStart="20dp"
+            android:src="@mipmap/back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <lax.lega.rv.com.legalax.common.CustomTextviewBold
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/add_p"
+            android:layout_width="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:text="@string/request_documents"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/clHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/grey_300"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <SearchView
+        android:id="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:queryBackground="@color/colorTransparent"
+        android:iconifiedByDefault="false"
+        android:layout_marginTop="6dp"
+        android:queryHint="Search Document"/>
+
+
+
+    <View
+        android:id="@+id/view1"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/grey_300"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/tvSelectCategoryD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        android:layout_marginHorizontal="10dp"
+        android:hint="@string/select_category"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:text="@string/all_categories"
+        android:textColor="@color/black"
+        android:paddingStart="10dp"
+        android:gravity="center_vertical"
+        android:background="@color/grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectCategoryD"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectCategoryD"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectCategoryD"
+        android:src="@drawable/dropdown_green"
+        android:layout_marginEnd="10dp"
+        android:tint="@color/black"
+        android:padding="4dp"
+        android:id="@+id/ivArrowCategory"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+
+
+    <TextView
+        android:id="@+id/tvSelectDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectCategoryD"
+        android:layout_marginHorizontal="10dp"
+        android:hint="@string/select_date"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:paddingStart="10dp"
+        android:text="@string/recent"
+        android:gravity="center_vertical"
+        android:background="@color/grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectDate"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectDate"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectDate"
+        android:src="@drawable/dropdown_green"
+        android:tint="@color/black"
+        android:padding="4dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/ivArrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRequestDocument"
+        android:paddingHorizontal="20dp"
+        android:clipToPadding="false"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</android.support.constraint.ConstraintLayout>

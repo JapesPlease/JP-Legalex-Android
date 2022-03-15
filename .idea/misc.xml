@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.22604166666666667" />
+        <entry key="app/src/main/res/layout/activity_credit_card.xml" value="0.10099637681159421" />
+        <entry key="app/src/main/res/layout/activity_g_cash.xml" value="0.10099637681159421" />
+        <entry key="app/src/main/res/layout/activity_purchase_credits.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/alluser_list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/alluser_video_list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/contact_us_dialog.xml" value="0.20123203285420946" />
+        <entry key="app/src/main/res/layout/dashboard_activity.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_payment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/editprofile_activity.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/fragment_accept_bid.xml" value="0.10416666666666667" />
+        <entry key="app/src/main/res/layout/fragment_go_to_proposal.xml" value="0.13269927536231885" />
+        <entry key="app/src/main/res/layout/fragment_lawyer_proposal.xml" value="0.11277173913043478" />
+        <entry key="app/src/main/res/layout/fragment_proposal.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_proposal_bidding.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/home_fragment_new.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/inboxlist_item.xml" value="0.19021739130434784" />
+        <entry key="app/src/main/res/layout/item_proposal_lawyer.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_rv_pending_proposal.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_view_document.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/update_profile_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/videcalllist_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/view_lawyer_profile_activity.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

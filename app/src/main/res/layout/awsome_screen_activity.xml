@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_parentroot"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/awsme_bg"
+              android:focusableInTouchMode="true"
+              android:gravity="center"
+              android:orientation="vertical"
+
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="25dp"
+                android:paddingTop="15dp"
+                android:weightSum="6">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/iclike"/>
+            </LinearLayout>
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingBottom="5dp"
+                android:text="AWESOME"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="36dp"
+                android:textStyle="bold"/>
+
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="Your password has been reset successful!"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"/>
+
+            <lax.lega.rv.com.legalax.common.CustomTextviewHelvicNormal
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="Login with your new password"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/icnlogin"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

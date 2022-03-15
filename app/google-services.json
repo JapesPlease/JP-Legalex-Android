@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "15933634728",
+    "firebase_url": "https://legalax-dc179.firebaseio.com",
+    "project_id": "legalax-dc179",
+    "storage_bucket": "legalax-dc179.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15933634728:android:f4d9920086719af5",
+        "android_client_info": {
+          "package_name": "lax.lega.rv.com.legalax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15933634728-2kvf1f3m709qgfjnlrbodp0n7p8u7nqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lax.lega.rv.com.legalax",
+            "certificate_hash": "71b0ac3852dfa085da3a2240c367e7cf8365540a"
+          }
+        },
+        {
+          "client_id": "15933634728-plbmv0n1gajmnslq86b45v66t6ck2bnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lax.lega.rv.com.legalax",
+            "certificate_hash": "c95a39ddde5430df0528a073636a0d57154d63dc"
+          }
+        },
+        {
+          "client_id": "15933634728-arv26jt6bdviire6dn4ucbkvk04iami3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lax.lega.rv.com.legalax",
+            "certificate_hash": "136f87b1b64de55786f536a17a7ae3254ee6482d"
+          }
+        },
+        {
+          "client_id": "15933634728-0mfaaou7rn0v26tf3rrugclcjme373rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUrCUklPpNsDYOPY90vomfZkPJC71qrkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15933634728-0mfaaou7rn0v26tf3rrugclcjme373rj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "15933634728-l25amnsvrcofj2ilohj0mburgnb19hqn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.legalex.rvtech"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,60 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="droidninja.filepicker"
+4    android:versionCode="1"
+5    android:versionName="2.1.5" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+11-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:5:5-81
+11-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:6:5-80
+12-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:6:22-77
+13
+14    <application
+14-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:8:5-28:19
+15        android:allowBackup="true"
+15-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:9:9-35
+16        android:largeHeap="true"
+16-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:11:9-33
+17        android:supportsRtl="true" >
+17-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:10:9-35
+18        <activity
+18-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:13:9-15:61
+19            android:name="droidninja.filepicker.FilePickerActivity"
+19-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:14:13-47
+20            android:configChanges="orientation|screenSize" />
+20-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:15:13-59
+21        <activity
+21-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:16:9-17:67
+22            android:name="droidninja.filepicker.MediaDetailsActivity"
+22-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:16:19-55
+23            android:configChanges="orientation|screenSize" />
+23-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:17:19-65
+24
+25        <provider
+25-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:19:9-27:20
+26            android:name="droidninja.filepicker.utils.FilePickerProvider"
+26-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:20:13-53
+27            android:authorities="${applicationId}.droidninja.filepicker.provider"
+27-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:21:13-82
+28            android:exported="false"
+28-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:22:13-37
+29            android:grantUriPermissions="true" >
+29-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:23:13-47
+30            <meta-data
+30-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:24:13-26:57
+31                android:name="android.support.FILE_PROVIDER_PATHS"
+31-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:25:17-67
+32                android:resource="@xml/provider_paths" />
+32-->/home/user/Documents/Legalex-JP-Android/filepicker/src/main/AndroidManifest.xml:26:17-55
+33        </provider>
+34    </application>
+35
+36</manifest>
