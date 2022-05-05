@@ -13,6 +13,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import com.sinch.gson.Gson
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_proposal_bidding.*
 import lax.lega.rv.com.legalax.R
@@ -47,12 +48,10 @@ class ProposalBiddingFragment(var bidList: BidList) : Fragment() {
     }
 
     private fun setData() {
-
         tvName.text = bidList.userInfo?.name
         tvTitle.text = bidList.title
         tvDescription.text = bidList.desc
         Picasso.with(requireActivity()).load(Utils.IMAGESURL + bidList.userInfo?.profileImage.toString()).fit().placeholder(R.drawable.icn_user_large).into(ivUserImage)
-
     }
 
     private fun listeners() {
@@ -60,14 +59,12 @@ class ProposalBiddingFragment(var bidList: BidList) : Fragment() {
         ivBack.setOnClickListener { activity?.onBackPressed() }
 
         tvBid.setOnClickListener {
-
             if (etPrice.text.toString().isEmpty()) {
                 Toast.makeText(requireContext(), "Please enter offer amount", Toast.LENGTH_LONG).show()
             } else if (etPrice.text.toString().replace(",","").toInt() in 1..99) {
                 Toast.makeText(requireContext(),
                         "Please enter a valid offer. Offer should be 0 or greater than 100", Toast.LENGTH_LONG).show()
             } else {
-
                 createBidApi(bidList.id.toString(), etPrice.text.toString().replace(",", ""))
             }
         }
@@ -105,6 +102,7 @@ class ProposalBiddingFragment(var bidList: BidList) : Fragment() {
 
     // create bid api
     private fun createBidApi(problemId: String, amount: String) {
+        Log.i("CreateBid","id:: "+problemId)
         Utils.instance.showProgressBar(requireActivity())
         AndroidNetworking.post(Utils.BASE_URL + Utils.CREATE_BID)
                 .addHeaders("Authorization", "Bearer " + sharedPreference.getString("access_token"))
@@ -116,6 +114,7 @@ class ProposalBiddingFragment(var bidList: BidList) : Fragment() {
                 .build()
                 .getAsObject(BidResponse::class.java, object : ParsedRequestListener<BidResponse> {
                     override fun onResponse(user: BidResponse) {
+                        Log.i("CreateBid","Response:: "+Gson().toJson(user))
                         Utils.instance.dismissProgressDialog()
                         if (user.success == true) {
                             Toast.makeText(requireContext(), user.message, Toast.LENGTH_LONG).show()
@@ -127,6 +126,7 @@ class ProposalBiddingFragment(var bidList: BidList) : Fragment() {
 
                     override fun onError(anError: ANError) {
                         Utils.instance.dismissProgressDialog()
+                        Log.i("CreateBid","Error:: "+Gson().toJson(anError))
                         Toast.makeText(requireContext(), "Unable to connect server", Toast.LENGTH_LONG).show()
                     }
                 })

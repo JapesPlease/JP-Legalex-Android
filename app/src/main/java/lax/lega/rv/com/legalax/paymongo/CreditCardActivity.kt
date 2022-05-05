@@ -16,7 +16,6 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_credit_card.*
-import kotlinx.android.synthetic.main.activity_credit_card.textViewCancel
 import lax.lega.rv.com.legalax.R
 import lax.lega.rv.com.legalax.common.MySharedPreference
 import lax.lega.rv.com.legalax.common.Utils
@@ -39,7 +38,8 @@ import lax.lega.rv.com.legalax.utils.openLogoutPopup
 import retrofit2.Call
 import retrofit2.Response
 
-class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePickerAdapter.ClickHandler {
+class CreditCardActivity : AppCompatActivity(), View.OnClickListener,
+    DatePickerAdapter.ClickHandler {
 
     var dialog: AlertDialog? = null
     var dialogType = 1 //1->Month 2->year
@@ -51,7 +51,29 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
     var clientKeyData = ""
     var paymentId = ""
     val month = arrayOf("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
-    val year = arrayOf("2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040")
+    val year = arrayOf(
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030",
+        "2031",
+        "2032",
+        "2033",
+        "2034",
+        "2035",
+        "2036",
+        "2037",
+        "2038",
+        "2039",
+        "2040"
+    )
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +89,8 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
         sharedPreference = MySharedPreference(this)
 
         price = intent.getDoubleExtra("amount", 0.0)
-        credits = intent.getStringExtra("credits")?:""
-        isCredit = intent.getBooleanExtra("isCredit",true)
+        credits = intent.getStringExtra("credits") ?: ""
+        isCredit = intent.getBooleanExtra("isCredit", true)
         textView5.text = "Amount: $price"
 
     }
@@ -127,19 +149,35 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
 
                 when {
                     editTextCardNumber.text.isEmpty() -> {
-                        Toast.makeText(this@CreditCardActivity, "Please enter the card number", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@CreditCardActivity,
+                            "Please enter the card number",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                     textViewMonth.text.isEmpty() -> {
-                        Toast.makeText(this@CreditCardActivity, "Please choose the month", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@CreditCardActivity,
+                            "Please choose the month",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                     textViewYear.text.isEmpty() -> {
-                        Toast.makeText(this@CreditCardActivity, "Please choose the year", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@CreditCardActivity,
+                            "Please choose the year",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                     editTextCvv.text.isEmpty() -> {
-                        Toast.makeText(this@CreditCardActivity, "Please enter the cvv", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@CreditCardActivity,
+                            "Please enter the cvv",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                     else -> {
@@ -183,22 +221,31 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
         val encodedString = Utils.PAYMONGO_PUBLIC_KEY.encode()
 
         //Utils.instance.dismissProgressDialog()
-          Utils.instance.showProgressBar(this)
-        val updateSetting = PayMongoService().apiService.createPaymentMethod("Basic $encodedString", card)
+        Utils.instance.showProgressBar(this)
+        val updateSetting =
+            PayMongoService().apiService.createPaymentMethod("Basic $encodedString", card)
         updateSetting.enqueue(object : retrofit2.Callback<CreatePaymentMethodResponse> {
             override fun onFailure(call: Call<CreatePaymentMethodResponse>, t: Throwable) {
                 // Utils.dismissProgressDialog(
-                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
                 Log.e("AddCreditPointsOnError", t.message.toString())
             }
 
-            override fun onResponse(call: Call<CreatePaymentMethodResponse>, response: Response<CreatePaymentMethodResponse>) {
+            override fun onResponse(
+                call: Call<CreatePaymentMethodResponse>,
+                response: Response<CreatePaymentMethodResponse>
+            ) {
                 //   Utils.instance.dismissProgressDialog()
                 if (response.code() == 200) {
-                    createPaymentIntent(response.body()?.data?.id?:"")
+                    createPaymentIntent(response.body()?.data?.id ?: "")
                 } else {
                     Utils.instance.dismissProgressDialog()
-                    Toast.makeText(this@CreditCardActivity, "invalid card detail", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        this@CreditCardActivity,
+                        "invalid card detail",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         })
@@ -207,29 +254,48 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
     private fun createPaymentIntent(paymentMethodId: String) {
         //   Utils.instance.dismissProgressDialog()
         //   Utils.instance.showProgressBar(this)
-        val updateSetting = WebService().apiService.createPaymentIntent("Bearer " + sharedPreference.getString("access_token"), price.toInt() * 100)
+        val updateSetting = WebService().apiService.createPaymentIntent(
+            "Bearer " + sharedPreference.getString("access_token"),
+            price.toInt() * 100
+        )
         updateSetting.enqueue(object : retrofit2.Callback<PaymentIntentResponse> {
             override fun onFailure(call: Call<PaymentIntentResponse>, t: Throwable) {
-                  Utils.instance.dismissProgressDialog()
-                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
+                Utils.instance.dismissProgressDialog()
+                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
                 Log.e("AddCreditPointsOnError", t.message.toString())
             }
 
-            override fun onResponse(call: Call<PaymentIntentResponse>, response: Response<PaymentIntentResponse>) {
+            override fun onResponse(
+                call: Call<PaymentIntentResponse>,
+                response: Response<PaymentIntentResponse>
+            ) {
 
                 /*var responseIs=response.body()!!.string().toString()
                   Log.e("api response is",responseIs)*/
 
                 if (response.code() == 200) {
-                    if (response.body()?.data?.errors != null && response.body()?.data?.errors?.size?:0 > 0) {
-                          Utils.instance.dismissProgressDialog()
-                        Toast.makeText(this@CreditCardActivity, response.body()!!.data!!.errors[0].detail, Toast.LENGTH_LONG).show()
+                    if (response.body()?.data?.errors != null && response.body()?.data?.errors?.size ?: 0 > 0) {
+                        Utils.instance.dismissProgressDialog()
+                        Toast.makeText(
+                            this@CreditCardActivity,
+                            response.body()!!.data!!.errors[0].detail,
+                            Toast.LENGTH_LONG
+                        ).show()
                     } else {
-                        makePayment(paymentMethodId, response.body()?.data?.data?.id?:"", response.body()?.data?.data?.attributes?.clientKey?:":")
+                        makePayment(
+                            paymentMethodId,
+                            response.body()?.data?.data?.id ?: "",
+                            response.body()?.data?.data?.attributes?.clientKey ?: ":"
+                        )
                     }
                 } else {
-                      Utils.instance.dismissProgressDialog()
-                    Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
+                    Utils.instance.dismissProgressDialog()
+                    Toast.makeText(
+                        this@CreditCardActivity,
+                        "Some thing went wrong",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         })
@@ -250,32 +316,59 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
 
         //   Utils.instance.dismissProgressDialog()
         //   Utils.instance.showProgressBar(this)
-        val updateSetting = PayMongoService().apiService.makePayment("Basic $encodedString", paymentIntentID, detail)
+        val updateSetting = PayMongoService().apiService.makePayment(
+            "Basic $encodedString",
+            paymentIntentID,
+            detail
+        )
         updateSetting.enqueue(object : retrofit2.Callback<PaymentResponse> {
             override fun onFailure(call: Call<PaymentResponse>, t: Throwable) {
-                  Utils.instance.dismissProgressDialog()
-                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
+                Utils.instance.dismissProgressDialog()
+                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
                 Log.e("AddCreditPointsOnError", t.message.toString())
             }
 
-            override fun onResponse(call: Call<PaymentResponse>, response: Response<PaymentResponse>) {
-                if (response.body()?.data?.attributes?.nextAction == null) {
-                    if (isCredit){
-                        addCreditsApi()
-                    }else{
-                        AcceptBidFragment.isPaymentSuccess=true
+            override fun onResponse(
+                call: Call<PaymentResponse>,
+                response: Response<PaymentResponse>
+            ) {
+                if (response.isSuccessful) {
+                    if (response.body()?.data?.attributes?.nextAction == null) {
+                        if (isCredit) {
+                            addCreditsApi()
+                        } else {
+                            AcceptBidFragment.isPaymentSuccess = true
+                            Utils.instance.dismissProgressDialog()
+                            Toast.makeText(
+                                this@CreditCardActivity,
+                                "payment success",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            finish()
+                        }
+
+                    } else {
+                        clientKeyData = response.body()?.data?.attributes?.clientKey ?: ""
+                        paymentId = response.body()?.data?.id ?: ""
                         Utils.instance.dismissProgressDialog()
-                        Toast.makeText(this@CreditCardActivity, "payment success", Toast.LENGTH_LONG).show()
-                        finish()
+                        startActivity(
+                            Intent(
+                                this@CreditCardActivity,
+                                ThreeDSecureActivity::class.java
+                            ).putExtra(
+                                "url",
+                                response.body()?.data?.attributes?.nextAction?.redirect?.url
+                            )
+                        )
                     }
-
                 } else {
-                    clientKeyData = response.body()?.data?.attributes?.clientKey?:""
-                    paymentId = response.body()?.data?.id?:""
-                      Utils.instance.dismissProgressDialog()
-                    startActivity(Intent(this@CreditCardActivity, ThreeDSecureActivity::class.java).putExtra("url", response.body()?.data?.attributes?.nextAction?.redirect?.url))
+                    Toast.makeText(
+                        this@CreditCardActivity,
+                        "Invalid card details",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-
             }
         })
     }
@@ -285,32 +378,37 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
     }
 
     private fun addCreditsApi() {
-          Utils.instance.showProgressBar(this)
+        Utils.instance.showProgressBar(this)
         val addCredit = WebService().apiService.add_credit(
-                "Bearer " + sharedPreference.getString("access_token"),
-                "application/json",
-                credits,
-                sharedPreference.getInt("id"),
-                "1"
+            "Bearer " + sharedPreference.getString("access_token"),
+            "application/json",
+            credits,
+            sharedPreference.getInt("id"),
+            "1"
         )
         addCredit.enqueue(object : retrofit2.Callback<AddCreditPointsPojo> {
 
             override fun onFailure(call: Call<AddCreditPointsPojo>, t: Throwable) {
-                  Utils.instance.dismissProgressDialog()
+                Utils.instance.dismissProgressDialog()
                 getRetrofitError(t, this@CreditCardActivity)
-                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@CreditCardActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
                 Log.e("AddCreditPointsOnError", t.message.toString())
             }
 
-            override fun onResponse(call: Call<AddCreditPointsPojo>, response: Response<AddCreditPointsPojo>) {
-                  Utils.instance.dismissProgressDialog()
+            override fun onResponse(
+                call: Call<AddCreditPointsPojo>,
+                response: Response<AddCreditPointsPojo>
+            ) {
+                Utils.instance.dismissProgressDialog()
                 // ed_credit_qunty.setText("")
                 if (response.code() == 401) {
                     openLogoutPopup(this@CreditCardActivity)
                 } else {
                     if (response.isSuccessful) {
-                        sharedPreference.putInt("points", response.body()?.points?:0)
-                        Toast.makeText(this@CreditCardActivity, "Credits Added", Toast.LENGTH_LONG).show()
+                        sharedPreference.putInt("points", response.body()?.points ?: 0)
+                        Toast.makeText(this@CreditCardActivity, "Credits Added", Toast.LENGTH_LONG)
+                            .show()
                         finish()
                     }
                 }
@@ -323,29 +421,41 @@ class CreditCardActivity : AppCompatActivity(), View.OnClickListener, DatePicker
 
         Utils.instance.showProgressBar(this)
         val encodedString = Utils.PAYMONGO_PUBLIC_KEY.encode()
-        val updateSetting = PayMongoService().apiService.checkPaymentStatus("Basic $encodedString", paymentId, clientKeyData)
+        val updateSetting = PayMongoService().apiService.checkPaymentStatus(
+            "Basic $encodedString",
+            paymentId,
+            clientKeyData
+        )
         updateSetting.enqueue(object : retrofit2.Callback<ThreeDSecurePaymentResponse> {
             override fun onFailure(call: Call<ThreeDSecurePaymentResponse>, t: Throwable) {
-                  Utils.instance.dismissProgressDialog()
+                Utils.instance.dismissProgressDialog()
             }
 
-            override fun onResponse(call: Call<ThreeDSecurePaymentResponse>, response: Response<ThreeDSecurePaymentResponse>) {
-                  Utils.instance.dismissProgressDialog()
+            override fun onResponse(
+                call: Call<ThreeDSecurePaymentResponse>,
+                response: Response<ThreeDSecurePaymentResponse>
+            ) {
+                Utils.instance.dismissProgressDialog()
                 when (response.body()?.data?.attributes?.status) {
                     "succeeded" -> {
-                        if (isCredit){
+                        if (isCredit) {
                             addCreditsApi()
-                        }else{
-                            Toast.makeText(this@CreditCardActivity, "payment success", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(
+                                this@CreditCardActivity,
+                                "payment success",
+                                Toast.LENGTH_LONG
+                            ).show()
                             Utils.instance.dismissProgressDialog()
-                            AcceptBidFragment.isPaymentSuccess=true
+                            AcceptBidFragment.isPaymentSuccess = true
                             finish()
 
                         }
 
                     }
                     "awaiting_payment_method" -> {
-                        Toast.makeText(this@CreditCardActivity, "Error Occured", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@CreditCardActivity, "Error Occured", Toast.LENGTH_LONG)
+                            .show()
                     }
                     "processing" -> {
                         threedSecureConfimationApi()

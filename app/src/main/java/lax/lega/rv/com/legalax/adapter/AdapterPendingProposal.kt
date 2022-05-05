@@ -94,37 +94,42 @@ class AdapterPendingProposal(
             itemView.tvAccept.setOnClickListener { clickInterface.onClickAccept(adapterPosition) }
 
             itemView.ivVideoCall.setOnClickListener {
-                val intent = Intent(
-                    activity,
-                    PurchaseCreditsActivity::class.java
-                ).putExtra("proposal", true)
-                    .putExtra("id", proposalList.lawyerInfo?.id.toString())
-                    .putExtra("image", proposalList.lawyerInfo?.profileImage.toString() ?: "")
-                    .putExtra(
-                        "firstName", proposalList.lawyerInfo?.name
-                            ?: ""
-                    )
-                    .putExtra("lastName", proposalList.lawyerInfo?.lastName ?: "")
-                activity.startActivityForResult(intent, 101)
-//                if (proposalList.lawyerInfo?.status == 1) {
-//                if (sharedPreference.getInt("points") > 0) {
-//                createSessionToken(
-//                    proposalList.lawyerInfo?.id.toString(),
-//                    proposalList.lawyerInfo?.profileImage.toString(),
-//                    proposalList.lawyerInfo?.name
-//                        ?: "",
-//                    proposalList.lawyerInfo?.lastName
-//                        ?: "",
-//                    itemView.context,
-//                    sharedPreference
-//                )
-//                } else {
-//                    Toast.makeText(itemView.context, "This lawyer don't have credits", Toast.LENGTH_LONG).show()
-//                }
-//                }
-//                else
-//                    Toast.makeText(itemView.context, "This user is not activated yet!", Toast.LENGTH_LONG).show()
-
+                if (isPending) {
+                    val intent = Intent(
+                        activity,
+                        PurchaseCreditsActivity::class.java
+                    ).putExtra("proposal", true)
+                        .putExtra("id", proposalList.lawyerInfo?.id.toString())
+                        .putExtra("image", proposalList.lawyerInfo?.profileImage.toString() ?: "")
+                        .putExtra(
+                            "firstName", proposalList.lawyerInfo?.name
+                                ?: ""
+                        )
+                        .putExtra("lastName", proposalList.lawyerInfo?.lastName ?: "")
+                    activity.startActivityForResult(intent, 101)
+                } else {
+                    if (proposalList.lawyerInfo?.status == 1) {
+//                        if (sharedPreference.getInt("points") > 0) {
+                        createSessionToken(
+                            proposalList.lawyerInfo?.id.toString(),
+                            proposalList.lawyerInfo?.profileImage.toString(),
+                            proposalList.lawyerInfo?.name
+                                ?: "",
+                            proposalList.lawyerInfo?.lastName
+                                ?: "",
+                            itemView.context,
+                            sharedPreference
+                        )
+//                        } else {
+//                            Toast.makeText(itemView.context, "This lawyer don't have credits", Toast.LENGTH_LONG).show()
+//                        }
+                    } else
+                        Toast.makeText(
+                            itemView.context,
+                            "This user is not activated yet!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                }
 
             }
 
@@ -148,11 +153,12 @@ class AdapterPendingProposal(
             itemView.ivUser.setOnClickListener {
                 val fragment = ViewLawyerProfileFragment()
                 val bundle = Bundle()
-                bundle.putString("lawyer_id",proposalList.lawyerInfo?.id.toString())
+                bundle.putString("lawyer_id", proposalList.lawyerInfo?.id.toString())
                 bundle.putString("image", proposalList.lawyerInfo?.profileImage.toString() ?: "")
 
                 fragment.setArguments(bundle)
-                (itemView.context as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.flContent, fragment).addToBackStack(null).commit()
+                (itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
+                    .replace(R.id.flContent, fragment).addToBackStack(null).commit()
             }
         }
 

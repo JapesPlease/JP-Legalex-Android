@@ -2222,6 +2222,8 @@ drawable toggle_on
 drawable toogle_off
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable video_call_camera_off
+drawable video_call_camera_on
 drawable view
 drawable white_circle
 drawable white_outline
@@ -2659,6 +2661,7 @@ id ivUpload
 id ivUser
 id ivUserImage
 id ivVideoCall
+id ivVideoCallCamera
 id iv_back
 id iv_cancel
 id iv_choose

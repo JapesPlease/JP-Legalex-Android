@@ -27,6 +27,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import com.sinch.gson.Gson
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_lawyer_proposal.*
 import kotlinx.android.synthetic.main.popup_bid.*
@@ -236,11 +237,8 @@ class LawyerProposalFragment : Fragment(), View.OnClickListener, ClickProposalLi
                         //   Utils.hideLoader()
 
                         if (user.success == true) {
-
                             listBid.clear()
                             listBid.addAll(user.data ?: emptyList())
-
-
                             if (listBid.isEmpty()) {
                                 if (tvNoData != null) {
                                     tvNoData.visibility = View.VISIBLE
@@ -259,6 +257,7 @@ class LawyerProposalFragment : Fragment(), View.OnClickListener, ClickProposalLi
 
                     override fun onError(anError: ANError) {
                         //   Utils.hideLoader()
+                        Log.i("LawyerPro",anError.localizedMessage)
                         Utils.instance.dismissProgressDialog()
                         getAnError(context as Activity, anError)
                         Toast.makeText(activity, "Unable to connect server", Toast.LENGTH_LONG).show()

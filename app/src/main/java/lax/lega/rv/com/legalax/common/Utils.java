@@ -40,7 +40,7 @@ public class Utils {
     public static final String PAYPAL_CLIENT_ID_LIVE = "Aeh5HrE87Y3C8seWT0OcqbEgOI9Xr9INSNXLxgL6C6-iXknOnV8WC5KX5m208E2L59bqby3x1sUob7Zl";
 
     /*Local server*/
-//    public static String SERVER_URL = "http://192.168.1.67/JP-Legalex-IOS_Backend/public";
+//    public static String SERVER_URL = "http://192.168.1.72/JP-Legalex-IOS_Backend/public";
 
     /*Dev*/
    public static String SERVER_URL = "http://server4.rvtechnologies.in/JP-Legalex-IOS_Backend/public";

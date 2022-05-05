@@ -89,8 +89,6 @@ class InboxListAdapter(private val context: Context, private val list: ArrayList
 
                 if ((mySharedPreference.getString("role").equals("2"))) {
                     if (list[position].groupchat.equals("1")) {
-
-
                         if (list[position].lawyer_no > 0) {
                             val intent = Intent(context, OpenChatActivity::class.java)
                             intent.putExtra("id", list[position].userDetail.id.toString())
@@ -190,7 +188,7 @@ class InboxListAdapter(private val context: Context, private val list: ArrayList
             val bundle = Bundle()
             bundle.putString("lawyer_id", list[position].id.toString())
             bundle.putString("image", list.get(position).profile_image)
-            fragment.setArguments(bundle)
+            fragment.arguments = bundle
             (itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.flContent, fragment)
                     .addToBackStack(null)

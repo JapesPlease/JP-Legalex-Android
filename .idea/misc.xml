@@ -4,9 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.22604166666666667" />
+        <entry key="app/src/main/res/drawable-xxhdpi/circle_shape.xml" value="0.1085" />
+        <entry key="app/src/main/res/drawable-xxhdpi/white_circle.xml" value="0.1085" />
         <entry key="app/src/main/res/layout/activity_credit_card.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/activity_g_cash.xml" value="0.10099637681159421" />
         <entry key="app/src/main/res/layout/activity_purchase_credits.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_video_call.xml" value="0.18" />
         <entry key="app/src/main/res/layout/alluser_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/alluser_video_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/contact_us_dialog.xml" value="0.20123203285420946" />
@@ -16,8 +19,10 @@
         <entry key="app/src/main/res/layout/fragment_accept_bid.xml" value="0.10416666666666667" />
         <entry key="app/src/main/res/layout/fragment_go_to_proposal.xml" value="0.13269927536231885" />
         <entry key="app/src/main/res/layout/fragment_lawyer_proposal.xml" value="0.11277173913043478" />
+        <entry key="app/src/main/res/layout/fragment_legal_concern.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_proposal.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_proposal_bidding.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_submit_legal_problem.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/home_fragment_new.xml" value="0.21" />
         <entry key="app/src/main/res/layout/inboxlist_item.xml" value="0.19021739130434784" />

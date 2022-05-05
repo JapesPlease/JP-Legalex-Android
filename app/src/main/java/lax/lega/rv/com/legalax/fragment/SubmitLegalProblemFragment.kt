@@ -122,10 +122,10 @@ class SubmitLegalProblemFragment(var header: String) : Fragment(), View.OnClickL
             selectedcategory=="" -> {
                Toast.makeText(requireContext(), "Please select category", Toast.LENGTH_SHORT).show()
             }
-            etTitle.text.toString().isEmpty()->{
+            etTitle.text.toString().trim().isEmpty()->{
                 Toast.makeText(requireContext(), "Please enter title", Toast.LENGTH_SHORT).show()
             }
-            etDescription.text.toString().isEmpty()->{
+            etDescription.text.toString().trim().isEmpty()->{
                 Toast.makeText(requireContext(), "Please enter description", Toast.LENGTH_SHORT).show()
             }
 

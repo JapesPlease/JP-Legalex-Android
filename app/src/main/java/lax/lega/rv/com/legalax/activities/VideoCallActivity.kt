@@ -29,7 +29,9 @@ import pub.devrel.easypermissions.EasyPermissions
 import retrofit2.Call
 import retrofit2.Response
 
-class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, WebServiceCoordinator.Listener, Session.SessionListener, PublisherKit.PublisherListener, SubscriberKit.SubscriberListener {
+class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks,
+    WebServiceCoordinator.Listener, Session.SessionListener, PublisherKit.PublisherListener,
+    SubscriberKit.SubscriberListener {
 
     private val LOG_TAG = MainActivity::class.java.simpleName
     private val RC_SETTINGS_SCREEN_PERM = 123
@@ -112,9 +114,11 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
         isProposal = intent.getBooleanExtra("isProposal", false)
         textViewPersonName.text = name
         if (image.startsWith("http") || image.startsWith("https"))
-            Picasso.with(this).load(image).fit().placeholder(R.drawable.icn_user_large).into(circularImageView)
+            Picasso.with(this).load(image).fit().placeholder(R.drawable.icn_user_large)
+                .into(circularImageView)
         else
-            Picasso.with(this).load(Utils.IMAGESURL + image).fit().placeholder(R.drawable.icn_user_large).into(circularImageView)
+            Picasso.with(this).load(Utils.IMAGESURL + image).fit()
+                .placeholder(R.drawable.icn_user_large).into(circularImageView)
 
     }
 
@@ -129,6 +133,20 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
             if (mPublisher != null) {
                 mPublisher!!.cycleCamera()
             }
+//            mPublisher!!.publishVideo = false
+        }
+        ivVideoCallCamera.setOnClickListener {
+            if (mPublisher != null) {
+                if (mPublisher!!.publishVideo) {
+                    mPublisher!!.publishVideo = false
+                    ivVideoCallCamera.setImageResource(R.drawable.video_call_camera_off)
+                } else {
+                    mPublisher!!.publishVideo = true
+                    ivVideoCallCamera.setImageResource(R.drawable.video_call_camera_on)
+
+                }
+            }
+
         }
 
 
@@ -178,24 +196,43 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
     @AfterPermissionGranted(124)
     private fun requestPermissions() {
 
-        val perms = arrayOf(Manifest.permission.INTERNET, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
+        val perms = arrayOf(
+            Manifest.permission.INTERNET,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO
+        )
         if (EasyPermissions.hasPermissions(this, *perms)) {
             if (OpenTokConfig.CHAT_SERVER_URL == null) {
                 if (OpenTokConfig.areHardCodedConfigsValid()) {
-                    initializeSession(OpenTokConfig.API_KEY, OpenTokConfig.SESSION_ID, OpenTokConfig.TOKEN)
+                    initializeSession(
+                        OpenTokConfig.API_KEY,
+                        OpenTokConfig.SESSION_ID,
+                        OpenTokConfig.TOKEN
+                    )
                 } else {
-                    showConfigError("Configuration Error", OpenTokConfig.hardCodedConfigErrorMessage)
+                    showConfigError(
+                        "Configuration Error",
+                        OpenTokConfig.hardCodedConfigErrorMessage
+                    )
                 }
             } else {
                 if (OpenTokConfig.isWebServerConfigUrlValid()) {
                     mWebServiceCoordinator = WebServiceCoordinator(this, this)
                     mWebServiceCoordinator!!.fetchSessionConnectionData(OpenTokConfig.SESSION_INFO_ENDPOINT)
                 } else {
-                    showConfigError("Configuration Error", OpenTokConfig.webServerConfigErrorMessage)
+                    showConfigError(
+                        "Configuration Error",
+                        OpenTokConfig.webServerConfigErrorMessage
+                    )
                 }
             }
         } else {
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_video_app), RC_VIDEO_APP_PERM, *perms)
+            EasyPermissions.requestPermissions(
+                this,
+                getString(R.string.rationale_video_app),
+                RC_VIDEO_APP_PERM,
+                *perms
+            )
         }
     }
 
@@ -207,7 +244,11 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
     }
 
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
@@ -217,13 +258,13 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
 
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
             AppSettingsDialog.Builder(this)
-                    .setTitle(getString(R.string.title_settings_dialog))
-                    .setRationale(getString(R.string.rationale_ask_again))
-                    .setPositiveButton(getString(R.string.setting))
-                    .setNegativeButton(getString(R.string.cancel))
-                    .setRequestCode(RC_SETTINGS_SCREEN_PERM)
-                    .build()
-                    .show()
+                .setTitle(getString(R.string.title_settings_dialog))
+                .setRationale(getString(R.string.rationale_ask_again))
+                .setPositiveButton(getString(R.string.setting))
+                .setNegativeButton(getString(R.string.cancel))
+                .setRequestCode(RC_SETTINGS_SCREEN_PERM)
+                .build()
+                .show()
         }
     }
 
@@ -243,7 +284,10 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
     }
 
     override fun onStreamDropped(session: Session?, stream: Stream?) {
-        Log.d(LOG_TAG, "onStreamDropped: Stream Dropped: " + stream!!.getStreamId() + " in session: " + session!!.getSessionId())
+        Log.d(
+            LOG_TAG,
+            "onStreamDropped: Stream Dropped: " + stream!!.getStreamId() + " in session: " + session!!.getSessionId()
+        )
         if (mSubscriber != null) {
             mSubscriber = null
             subscriber_container.removeAllViews()
@@ -256,11 +300,15 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
         timeHandler();
 
         countDownTimer2();
-        Log.d(LOG_TAG, "onStreamReceived: New Stream Received " + stream!!.getStreamId() + " in session: " + session!!.getSessionId())
+        Log.d(
+            LOG_TAG,
+            "onStreamReceived: New Stream Received " + stream!!.getStreamId() + " in session: " + session!!.getSessionId()
+        )
         recievedStream = stream
         if (mSubscriber == null) {
             mSubscriber = Subscriber.Builder(this, recievedStream).build()
-            mSubscriber!!.getRenderer().setStyle(BaseVideoRenderer.STYLE_VIDEO_SCALE, BaseVideoRenderer.STYLE_VIDEO_FILL)
+            mSubscriber!!.getRenderer()
+                .setStyle(BaseVideoRenderer.STYLE_VIDEO_SCALE, BaseVideoRenderer.STYLE_VIDEO_FILL)
             mSubscriber!!.setSubscriberListener(this)
             mSession!!.subscribe(mSubscriber)
             subscriber_container.addView(mSubscriber!!.getView())
@@ -279,8 +327,10 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
         mPublisher!!.setPublisherListener(this)
 
         // set publisher video style to fill view
-        mPublisher!!.getRenderer().setStyle(BaseVideoRenderer.STYLE_VIDEO_SCALE,
-                BaseVideoRenderer.STYLE_VIDEO_FILL)
+        mPublisher!!.getRenderer().setStyle(
+            BaseVideoRenderer.STYLE_VIDEO_SCALE,
+            BaseVideoRenderer.STYLE_VIDEO_FILL
+        )
         publisher_container.addView(mPublisher!!.getView())
         if (mPublisher!!.getView() is GLSurfaceView) {
             (mPublisher!!.getView() as GLSurfaceView).setZOrderOnTop(true)
@@ -288,12 +338,21 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
         if (mSession != null) {
             mSession!!.publish(mPublisher)
         }
+//        if (mPublisher!!.publishVideo) {
+//            mPublisher!!.publishVideo = false
+//            ivVideoCallCamera.setImageResource(R.drawable.video_call_camera_off)
+//        } else {
+//            mPublisher!!.publishVideo = true
+//            ivVideoCallCamera.setImageResource(R.drawable.video_call_camera_on)
+//        }
     }
 
 
     override fun onError(session: Session?, opentokError: OpentokError?) {
-        Log.e(LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
-                opentokError.getErrorCode() + " - " + opentokError.getMessage() + " in session: " + session!!.getSessionId())
+        Log.e(
+            LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
+                    opentokError.getErrorCode() + " - " + opentokError.getMessage() + " in session: " + session!!.getSessionId()
+        )
 
         showOpenTokError(opentokError)
     }
@@ -311,15 +370,19 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
     }
 
     override fun onError(p0: PublisherKit?, opentokError: OpentokError?) {
-        Log.e(LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
-                opentokError.getErrorCode() + " - " + opentokError.getMessage())
+        Log.e(
+            LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
+                    opentokError.getErrorCode() + " - " + opentokError.getMessage()
+        )
 
         showOpenTokError(opentokError)
     }
 
     override fun onError(p0: SubscriberKit?, opentokError: OpentokError?) {
-        Log.e(LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
-                opentokError.getErrorCode() + " - " + opentokError.getMessage())
+        Log.e(
+            LOG_TAG, "onError: " + opentokError!!.getErrorDomain() + " : " +
+                    opentokError.getErrorCode() + " - " + opentokError.getMessage()
+        )
 
         showOpenTokError(opentokError)
     }
@@ -341,11 +404,11 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
     private fun showConfigError(alertTitle: String, errorMessage: String) {
         Log.e(LOG_TAG, "Error $alertTitle: $errorMessage")
         AlertDialog.Builder(this)
-                .setTitle(alertTitle)
-                .setMessage(errorMessage)
-                .setPositiveButton("ok") { dialog, which -> this@VideoCallActivity.finish() }
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show()
+            .setTitle(alertTitle)
+            .setMessage(errorMessage)
+            .setPositiveButton("ok") { dialog, which -> this@VideoCallActivity.finish() }
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show()
     }
 
     fun countDownTimer() {
@@ -453,30 +516,37 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
 
     private fun deductCreditsApi(id: String) {
         val add_credit = WebService().apiService.add_credit(
-                "Bearer " + sharedPreference.getString("access_token"),
-                "application/json",
-                "1",
-                id.toLong(),
-                "0"
+            "Bearer " + sharedPreference.getString("access_token"),
+            "application/json",
+            "1",
+            id.toLong(),
+            "0"
         )
 
         add_credit.enqueue(object : retrofit2.Callback<AddCreditPointsPojo> {
 
             override fun onFailure(call: Call<AddCreditPointsPojo>, t: Throwable) {
-                Toast.makeText(this@VideoCallActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
-               // Log.e("AddCreditPointsOnError", t.message)
+                Toast.makeText(this@VideoCallActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
+                // Log.e("AddCreditPointsOnError", t.message)
             }
 
-            override fun onResponse(call: Call<AddCreditPointsPojo>, response: Response<AddCreditPointsPojo>) {
+            override fun onResponse(
+                call: Call<AddCreditPointsPojo>,
+                response: Response<AddCreditPointsPojo>
+            ) {
 
                 if (response.code() == 401) {
                     openLogoutPopup(this@VideoCallActivity)
                 } else {
 
                     if (response.isSuccessful) {
-
                         sharedPreference.putInt("points", response.body()!!.points)
-                        Toast.makeText(this@VideoCallActivity, "Api hit successfully", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@VideoCallActivity,
+                            "Api hit successfully",
+                            Toast.LENGTH_LONG
+                        ).show()
                         Log.e("deductCredApiHitSuccess", response.body().toString())
                     }
                 }
@@ -487,15 +557,16 @@ class VideoCallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
 
     private fun saveVideoCall() {
         val add_credit = WebService().apiService.saveVideoCall(
-                "Bearer " + sharedPreference.getString("access_token"),
-                reciverId
+            "Bearer " + sharedPreference.getString("access_token"),
+            reciverId
         )
 
         add_credit.enqueue(object : retrofit2.Callback<ResponseBody> {
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Toast.makeText(this@VideoCallActivity, "Some thing went wrong", Toast.LENGTH_LONG).show()
-               // Log.e("AddCreditPointsOnError", t.message)
+                Toast.makeText(this@VideoCallActivity, "Some thing went wrong", Toast.LENGTH_LONG)
+                    .show()
+                // Log.e("AddCreditPointsOnError", t.message)
             }
 
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {

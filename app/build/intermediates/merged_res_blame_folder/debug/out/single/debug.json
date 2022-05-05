@@ -48,6 +48,10 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_video_call_camera_off.png.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/video_call_camera_off.png"
+    },
+    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_contactus.png.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/icn_contactus.png"
     },
@@ -108,12 +112,12 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/bg_oragne_gradiant4dp.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_fragment_accept_bid.xml.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/fragment_accept_bid.xml"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_fragment_proposal_bidding.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/fragment_proposal_bidding.xml"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_fragment_accept_bid.xml.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/fragment_accept_bid.xml"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_white_circle.xml.flat",
@@ -124,12 +128,12 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/bg_green_stroke_4.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_inboxlist_fragment.xml.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/inboxlist_fragment.xml"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_filled_round_corner.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/filled_round_corner.xml"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_inboxlist_fragment.xml.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/inboxlist_fragment.xml"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable_calldetct.png.flat",
@@ -176,12 +180,12 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/incoming.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable_iv_04.png.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/iv_04.png"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_background.jpg.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/background.jpg"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable_iv_04.png.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/iv_04.png"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_lawyer_bg.png.flat",
@@ -216,6 +220,10 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/progress_background.xml"
     },
     {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_video_call_camera_on.png.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/video_call_camera_on.png"
+    },
+    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_circle_plus.png.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/icn_circle_plus.png"
     },
@@ -236,12 +244,12 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/login_pressed.png"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_alluser_video_list_item.xml.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/alluser_video_list_item.xml"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_private_files_item.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/private_files_item.xml"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_alluser_video_list_item.xml.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/alluser_video_list_item.xml"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_custom_dialog_calendar.xml.flat",
@@ -344,20 +352,20 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/bg_green_top_corner_eight_dp.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_oval_black_background_solid_selector.xml.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/oval_black_background_solid_selector.xml"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_newsfeed_item.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/newsfeed_item.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_login_activity.xml.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/login_activity.xml"
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_oval_black_background_solid_selector.xml.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/oval_black_background_solid_selector.xml"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_send_file_item.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/send_file_item.xml"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/layout_login_activity.xml.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/layout/login_activity.xml"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_gray_message.png.flat",
@@ -680,12 +688,12 @@
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/outline_single_green.xml"
     },
     {
-        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_facebook_white.png.flat",
-        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/ic_facebook_white.png"
-    },
-    {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable_button_login.xml.flat",
         "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable/button_login.xml"
+    },
+    {
+        "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_facebook_white.png.flat",
+        "source": "/home/user/Documents/Legalex-JP-Android/app/src/main/res/drawable-xxhdpi/ic_facebook_white.png"
     },
     {
         "merged": "/home/user/Documents/Legalex-JP-Android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_bg_news_feed.png.flat",

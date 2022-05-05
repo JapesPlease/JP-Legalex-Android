@@ -83,12 +83,14 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
     var logger: AppEventsLogger? = null
     var dialog: AlertDialog? = null
 
-    val permission = arrayOf(Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            // Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.CAMERA,
-            Manifest.permission.CALL_PHONE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    val permission = arrayOf(
+        Manifest.permission.RECORD_AUDIO,
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        // Manifest.permission.READ_PHONE_STATE,
+        Manifest.permission.CAMERA,
+        Manifest.permission.CALL_PHONE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )
 
     lateinit var builder: AlertDialog.Builder
 
@@ -164,7 +166,8 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 
 
     fun passwordMatcher(edtText: EditText): Boolean {
-        val pattern = Pattern.compile("^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{8,}\$")
+        val pattern =
+            Pattern.compile("^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{8,}\$")
         val matcher = pattern.matcher(edtText.text.toString())
         val isMatched = matcher.matches()
         if (isMatched) {
@@ -183,12 +186,31 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
     private fun click() {
         if (checkPermission(permission) > 0) {
             ActivityCompat.requestPermissions(
-                    this,
-                    permission,
-                    1001)
+                this,
+                permission,
+                1001
+            )
         }
 
         btn_login.setOnClickListener {
+//                  if (isPackageInstalled("com.facebook.orca",this)) {
+//                      var uri = Uri.parse("fb-messenger://user/");
+//                      uri = ContentUris.withAppendedId(uri, 100003021156170);
+//                      val intent = Intent(Intent.ACTION_VIEW, uri);
+//                      startActivity(intent);
+//                  }
+//            else
+//                  {
+//                      val dialog = Dialog(this)
+//                      dialog.setContentView(R.layout.contact_us_dialog)
+//                      val textView = dialog.findViewById<TextView>(R.id.tv_ok)
+//                      val tvPopupMsg = dialog.findViewById<TextView>(R.id.tvPopupMsg)
+//                      tvPopupMsg.setText(
+//                         "You do not have facebook messenger app in your phone. Please install facebook messenger app to your phone."
+//                      )
+//                      textView.setOnClickListener { dialog.dismiss() }
+//                      dialog.show()
+//                  }
             if (!isValidEmail(edt_email_login.text.toString())) {
                 Toast.makeText(this@LoginActivity, "Please enter email", Toast.LENGTH_LONG).show()
             } else if (edt_pwd_login.text.isEmpty() || edt_pwd_login.text.length < 6) {
@@ -197,13 +219,18 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                 val connectionDetector = ConnectionDetector(this@LoginActivity)
                 connectionDetector.isConnectingToInternet
                 if (connectionDetector.isConnectingToInternet == false) run {
-                    Toast.makeText(this@LoginActivity, "No Internet Connection", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@LoginActivity, "No Internet Connection", Toast.LENGTH_LONG)
+                        .show()
                 } else {
 //                    if (!passwordMatcher(edt_pwd_login)) {
 //                        edt_pwd_login.setError("Password must contain one uppercase , digit and special character")
 //                        edt_pwd_login.requestFocus()
 //                    } else {
-                    LoginAPI(edt_email_login.text.toString(), edt_pwd_login.text.toString(), Utils.LOGIN)
+                    LoginAPI(
+                        edt_email_login.text.toString(),
+                        edt_pwd_login.text.toString(),
+                        Utils.LOGIN
+                    )
                     //  }
                 }
             }
@@ -217,7 +244,6 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
             val intent = Intent(this@LoginActivity, SignupActivity::class.java)
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             startActivity(intent)
-            //   }
         }
 
         btn_fb.setOnClickListener {
@@ -238,13 +264,22 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 //            } else {
                 Log.e("INISDELOGINBUTTON", ">>>>>>" + "clickeddddddddddddddddddddddddddddddddddddddddd")*/
                 setFacebookListener()
-//
             }
             Log.e("Outsidecalled", ">>>>>>" + "clickeddddddddddddddddddddddddddddddddddddddddd")
 
         }
 
 
+    }
+
+    fun isPackageInstalled(packageName: String, context: Context): Boolean {
+        return try {
+            val packageManager = context.packageManager
+            packageManager.getPackageInfo(packageName, 0)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
 
     private fun setFacebookListener() {
@@ -255,8 +290,8 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
             loginmanager.logOut()
         }
         loginmanager.logInWithReadPermissions(
-                this,
-                listOf("public_profile", "email")
+            this,
+            listOf("public_profile", "email")
         )
 //        val permissionNeeds = Arrays.asList("user_photos", "email", "user_birthday", "public_profile", "AccessToken")
         //   loginmanager.setReadPermissions(Arrays.asList("email,public_profile"));
@@ -277,7 +312,8 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                     id = `object`.optString("id")
                     Log.e("id", ">>>>>>>>>>>>$id")
                     try {
-                        val profile_pic = URL("https://graph.facebook.com/" + "" + "/picture?width=150&height=150")
+                        val profile_pic =
+                            URL("https://graph.facebook.com/" + "" + "/picture?width=150&height=150")
                         //   img_value = new URL("https://graph.facebook.com/" + id + "/picture?type=large");
 
                         Log.i("profile_pic", profile_pic.toString() + "")
@@ -286,19 +322,27 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                     } catch (e: MalformedURLException) {
                         e.printStackTrace()
                     }
-                    name = `object`.optString("name")?:""
-                    email = `object`.optString("email") ?:""
-                    gender = `object`.optString("gender")?:""
-                    birthday = `object`.optString("birthday")?:""
-                    firstname = `object`.optString("first_name")?:""
-                    lastname = `object`.optString("last_name")?:""
+                    name = `object`.optString("name") ?: ""
+                    email = `object`.optString("email") ?: ""
+                    gender = `object`.optString("gender") ?: ""
+                    birthday = `object`.optString("birthday") ?: ""
+                    firstname = `object`.optString("first_name") ?: ""
+                    lastname = `object`.optString("last_name") ?: ""
                     if (id?.length != 0) {
                         val connectionDetector = ConnectionDetector(this@LoginActivity)
                         connectionDetector.isConnectingToInternet
                         if (connectionDetector.isConnectingToInternet === false) run {
-                            Toast.makeText(this@LoginActivity, "No Internet Connection", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "No Internet Connection",
+                                Toast.LENGTH_LONG
+                            ).show()
                         } else {
-                            isRegistered(`object`.optString("id"), `object`.optString("last_name"), `object`.optString("email"))
+                            isRegistered(
+                                `object`.optString("id"),
+                                `object`.optString("last_name"),
+                                `object`.optString("email")
+                            )
                         }
                     }
                 }
@@ -314,7 +358,14 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                 try {
                     if (AccessToken.getCurrentAccessToken() != null) {
                         LoginManager.getInstance().logOut()
-                        GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback { LoginManager.getInstance().logOut() }).executeAsync()
+                        GraphRequest(
+                            AccessToken.getCurrentAccessToken(),
+                            "/me/permissions/",
+                            null,
+                            HttpMethod.DELETE,
+                            GraphRequest.Callback {
+                                LoginManager.getInstance().logOut()
+                            }).executeAsync()
 
                     }
                 } catch (e: Exception) {
@@ -328,7 +379,14 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                 try {
                     if (AccessToken.getCurrentAccessToken() != null) {
                         LoginManager.getInstance().logOut()
-                        GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback { LoginManager.getInstance().logOut() }).executeAsync()
+                        GraphRequest(
+                            AccessToken.getCurrentAccessToken(),
+                            "/me/permissions/",
+                            null,
+                            HttpMethod.DELETE,
+                            GraphRequest.Callback {
+                                LoginManager.getInstance().logOut()
+                            }).executeAsync()
 
                     }
                 } catch (e: Exception) {
@@ -344,26 +402,30 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         Log.e("Sending Id", ">>>>>>>>>>>>>>>>>>>>>$facebook_id")
         Utils.instance.showProgressBar(this@LoginActivity)
         AndroidNetworking.post(Utils.BASE_URL + Utils.FB_ISREGESTERD)
-                .addBodyParameter("facebook_id", facebook_id)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsObject(CheckFBPojo::class.java, object : ParsedRequestListener<CheckFBPojo> {
-                    override fun onResponse(user: CheckFBPojo) {
-                        Utils.instance.dismissProgressDialog()
-                        Log.e("Responsee", ">>>>>>>>>>" + user.response);
-                        if (user.response == true) {
-                            FBLoginAPI(facebook_id)
-                        } else {
+            .addBodyParameter("facebook_id", facebook_id)
+            .setPriority(Priority.HIGH)
+            .build()
+            .getAsObject(CheckFBPojo::class.java, object : ParsedRequestListener<CheckFBPojo> {
+                override fun onResponse(user: CheckFBPojo) {
+                    Utils.instance.dismissProgressDialog()
+                    Log.e("Responsee", ">>>>>>>>>>" + user.response);
+                    if (user.response == true) {
+                        FBLoginAPI(facebook_id)
+                    } else {
 
-                            DialogShow(last_name, facebook_id, email)
-                        }
+                        DialogShow(last_name, facebook_id, email)
                     }
+                }
 
-                    override fun onError(anError: ANError) {
-                        Utils.instance.dismissProgressDialog()
-                        Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
-                    }
-                })
+                override fun onError(anError: ANError) {
+                    Utils.instance.dismissProgressDialog()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Unable to connect server",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
     }
 
     fun isValidEmail(target: CharSequence): Boolean {
@@ -385,9 +447,10 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == requestCodeSetting) {
             ActivityCompat.requestPermissions(
-                    this,
-                    permission,
-                    1001)
+                this,
+                permission,
+                1001
+            )
         } else {
             callbackManager.onActivityResult(requestCode, resultCode, data)
         }
@@ -398,210 +461,280 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 
         Log.e("login url is", Utils.BASE_URL + endPointLogin)
         AndroidNetworking.post(Utils.BASE_URL + endPointLogin)
-                .addBodyParameter("email", email)
-                .addBodyParameter("password", password)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsObject(LoginPojo::class.java, object : ParsedRequestListener<LoginPojo> {
-                    override fun onResponse(user: LoginPojo) {
-                        Utils.instance.dismissProgressDialog()
-                        Log.e("Response", ">>>>>>>>>>>" + user.message)
-                        Log.e("Status", ">>>>>>>>>>>" + user.success)
-                        if (user.success.equals(true)) {
-                            Log.e("AccessToken", ">>>>>>>>>>>>>>" + user.accessToken)
-                            sharedPreference.putString("access_token", user.accessToken)
-                            sharedPreference.putString("write_something", user.user.writeSomething)
-                            sharedPreference.putInt("id", user.user.id)
-                            sharedPreference.putString("name", user.user.name.toString())
-                            sharedPreference.putString("last_name", user.user.lastName.toString())
+            .addBodyParameter("email", email)
+            .addBodyParameter("password", password)
+            .setPriority(Priority.HIGH)
+            .build()
+            .getAsObject(LoginPojo::class.java, object : ParsedRequestListener<LoginPojo> {
+                override fun onResponse(user: LoginPojo) {
+                    Utils.instance.dismissProgressDialog()
+                    Log.e("Response", ">>>>>>>>>>>" + user.message)
+                    Log.e("Status", ">>>>>>>>>>>" + user.success)
+                    if (user.success.equals(true)) {
+                        Log.e("AccessToken", ">>>>>>>>>>>>>>" + user.accessToken)
+                        sharedPreference.putString("access_token", user.accessToken)
+                        sharedPreference.putString("write_something", user.user.writeSomething)
+                        sharedPreference.putInt("id", user.user.id)
+                        sharedPreference.putString("name", user.user.name.toString())
+                        sharedPreference.putString("last_name", user.user.lastName.toString())
 
-                            if (user.user.age != null && !user.user.age.equals("")) {
-                                sharedPreference.putString("age", user.user.age)
-                            } else {
-                                sharedPreference.putString("age", "0")
-                            }
-
-                            if (user.user.location != null)
-                                sharedPreference.putString("location", user.user.location.toString())
-                            else
-                                sharedPreference.putString("location", "")
-                            if (user.user.phone == null) {
-                                sharedPreference.putString("phone", "")
-                            } else {
-                                sharedPreference.putString("phone", user.user.phone.toString())
-                            }
-                            sharedPreference.putString("role", user.user.role.toString())
-                            //  sharedPreference.putString("role", "2")
-                            sharedPreference.putString("email", user.user.email.toString())
-                            if (user.user.fcmToken == null && user.user.fcmToken != "") {
-                                sharedPreference.putString("sp_fcm", "")
-                            } else {
-                                sharedPreference.putString("sp_fcm", user.user.fcmToken.toString())
-                            }
-                            if (user.user.profileImage != null && user.user.profileImage != "") {
-                                sharedPreference.putString("profile_image", user.user.profileImage.toString())
-                            }
-                            sharedPreference.putInt("status", user.user.status)
-                            sharedPreference.putInt("points", user.user.points)
-                            sharedPreference.putString("videoCallStatus", user.user.video_call_status.toString())
-
-                            loginClicked()
+                        if (user.user.age != null && !user.user.age.equals("")) {
+                            sharedPreference.putString("age", user.user.age)
                         } else {
-
-                            if (user.message == "You can not login. Because you are already loggedin with another device.") {
-
-                                openForcefullyLofinPopup(this@LoginActivity)
-
-                            }
-                            Toast.makeText(this@LoginActivity, user.message, Toast.LENGTH_LONG).show()
+                            sharedPreference.putString("age", "0")
                         }
-                    }
 
-                    override fun onError(anError: ANError) {
-                        Utils.instance.dismissProgressDialog()
-                        Log.e("Exception", ">>>>>>>>>>>>>>>>>>>>>" + anError.errorBody);
-                        Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
+                        if (user.user.location != null)
+                            sharedPreference.putString("location", user.user.location.toString())
+                        else
+                            sharedPreference.putString("location", "")
+                        if (user.user.phone == null) {
+                            sharedPreference.putString("phone", "")
+                        } else {
+                            sharedPreference.putString("phone", user.user.phone.toString())
+                        }
+                        sharedPreference.putString("role", user.user.role.toString())
+                        //  sharedPreference.putString("role", "2")
+                        sharedPreference.putString("email", user.user.email.toString())
+                        if (user.user.fcmToken == null && user.user.fcmToken != "") {
+                            sharedPreference.putString("sp_fcm", "")
+                        } else {
+                            sharedPreference.putString("sp_fcm", user.user.fcmToken.toString())
+                        }
+                        if (user.user.profileImage != null && user.user.profileImage != "") {
+                            sharedPreference.putString(
+                                "profile_image",
+                                user.user.profileImage.toString()
+                            )
+                        }
+                        sharedPreference.putInt("status", user.user.status)
+                        sharedPreference.putInt("points", user.user.points)
+                        sharedPreference.putString(
+                            "videoCallStatus",
+                            user.user.video_call_status.toString()
+                        )
+
+                        loginClicked()
+                    } else {
+
+                        if (user.message == "You can not login. Because you are already loggedin with another device.") {
+
+                            openForcefullyLofinPopup(this@LoginActivity)
+
+                        }
+                        else
+                        Toast.makeText(this@LoginActivity, user.message, Toast.LENGTH_LONG).show()
                     }
-                })
+                }
+
+                override fun onError(anError: ANError) {
+                    Utils.instance.dismissProgressDialog()
+                    Log.e("Exception", ">>>>>>>>>>>>>>>>>>>>>" + anError.errorBody);
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Unable to connect server",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
     }
 
 
-    fun FBSignupAPI(name: String, last_name: String, email: String, facebook_id: String, role: String, age: String, location: String, phone: String, mDialogView: Dialog) {
+    fun FBSignupAPI(
+        name: String,
+        last_name: String,
+        email: String,
+        facebook_id: String,
+        role: String,
+        age: String,
+        location: String,
+        phone: String,
+        mDialogView: Dialog
+    ) {
 
         Utils.instance.showProgressBar(this@LoginActivity)
         Log.e("MainValue", ">>>>>>>>>>>>>>>>" + phone);
         AndroidNetworking.post(Utils.BASE_URL + Utils.FB_LOGIN)
-                .addBodyParameter("name", name)
-                .addBodyParameter("last_name", last_name)
-                .addBodyParameter("email", email)
-                .addBodyParameter("facebook_id", facebook_id)
-                .addBodyParameter("role", role)
-                .addBodyParameter("age", age)
-                .addBodyParameter("location", location)
-                .addBodyParameter("phone", "")
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsObject(FbLoginPojo::class.java, object : ParsedRequestListener<FbLoginPojo> {
-                    override fun onResponse(user: FbLoginPojo) {
-                        Utils.instance.dismissProgressDialog()
-                        mDialogView.dismiss()
-                        if (user.success == true) {
-                            Log.e("LoginResponse", ">>>>>>>>>>>>" + user)
-                            sharedPreference.putString("access_token", user.accessToken)
-                            sharedPreference.putInt("id", user.user.id)
-                            sharedPreference.putString("name", user.user.name.toString())
-                            sharedPreference.putString("last_name", user.user.lastName.toString())
+            .addBodyParameter("name", name)
+            .addBodyParameter("last_name", last_name)
+            .addBodyParameter("email", email)
+            .addBodyParameter("facebook_id", facebook_id)
+            .addBodyParameter("role", role)
+            .addBodyParameter("age", age)
+            .addBodyParameter("location", location)
+            .addBodyParameter("phone", "")
+            .setPriority(Priority.HIGH)
+            .build()
+            .getAsObject(FbLoginPojo::class.java, object : ParsedRequestListener<FbLoginPojo> {
+                override fun onResponse(user: FbLoginPojo) {
+                    Utils.instance.dismissProgressDialog()
+                    mDialogView.dismiss()
+                    if (user.success == true) {
+                        Log.e("LoginResponse", ">>>>>>>>>>>>" + user)
+                        sharedPreference.putString("access_token", user.accessToken)
+                        sharedPreference.putInt("id", user.user.id)
+                        sharedPreference.putString("name", user.user.name.toString())
+                        sharedPreference.putString("last_name", user.user.lastName.toString())
 //                            sharedPreference.putInt("age", user.user.age)
-                            if (user.user.age != null && !user.user.age.equals("")) {
-                                sharedPreference.putString("age", user.user.age!!)
+                        if (user.user.age != null && !user.user.age.equals("")) {
+                            sharedPreference.putString("age", user.user.age!!)
 
-                            } else {
-                                sharedPreference.putString("age", "0")
-                            }
-                            if (user.user.location != null)
-                                sharedPreference.putString("location", user.user.location.toString())
-                            else
-                                sharedPreference.putString("location", "")
-                            if (user.user.phone == null) {
-                                sharedPreference.putString("phone", "")
-                            } else {
-                                sharedPreference.putString("phone", user.user.phone.toString())
-                            }
-                            sharedPreference.putString("role", user.user.role.toString())
-                            sharedPreference.putString("email", user.user.email.toString())
-                            sharedPreference.putInt("status", user.user.status)
-                            Log.e("SharedStatus", ">>>>>>>>>>" + sharedPreference.getInt("status"))
-                            Toast.makeText(this@LoginActivity, "User has been Login successfully.", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                            intent.putExtra("f", "")
-
-                            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
-                            startActivity(intent)
-                            finish()
                         } else {
-                            try {
-                                if (AccessToken.getCurrentAccessToken() != null) {
-                                    LoginManager.getInstance().logOut()
-                                    GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback { LoginManager.getInstance().logOut() }).executeAsync()
-
-                                }
-                            } catch (e: Exception) {
-                                e.printStackTrace()
-                            }
-                            Toast.makeText(this@LoginActivity, "User has been Login not successfully.", Toast.LENGTH_LONG).show()
-
+                            sharedPreference.putString("age", "0")
                         }
-                    }
+                        if (user.user.location != null)
+                            sharedPreference.putString("location", user.user.location.toString())
+                        else
+                            sharedPreference.putString("location", "")
+                        if (user.user.phone == null) {
+                            sharedPreference.putString("phone", "")
+                        } else {
+                            sharedPreference.putString("phone", user.user.phone.toString())
+                        }
+                        sharedPreference.putString("role", user.user.role.toString())
+                        sharedPreference.putString("email", user.user.email.toString())
+                        sharedPreference.putInt("status", user.user.status)
+                        Log.e("SharedStatus", ">>>>>>>>>>" + sharedPreference.getInt("status"))
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "User has been Login successfully.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        intent.putExtra("f", "")
 
-                    override fun onError(anError: ANError) {
-                        Utils.instance.dismissProgressDialog()
-                        mDialogView.dismiss()
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+                        startActivity(intent)
+                        finish()
+                    } else {
                         try {
                             if (AccessToken.getCurrentAccessToken() != null) {
-                                GraphRequest(AccessToken.getCurrentAccessToken(), "/me/permissions/", null, HttpMethod.DELETE, GraphRequest.Callback { LoginManager.getInstance().logOut() }).executeAsync()
+                                LoginManager.getInstance().logOut()
+                                GraphRequest(
+                                    AccessToken.getCurrentAccessToken(),
+                                    "/me/permissions/",
+                                    null,
+                                    HttpMethod.DELETE,
+                                    GraphRequest.Callback {
+                                        LoginManager.getInstance().logOut()
+                                    }).executeAsync()
 
                             }
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
-                        Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "User has been Login not successfully.",
+                            Toast.LENGTH_LONG
+                        ).show()
 
                     }
-                })
+                }
+
+                override fun onError(anError: ANError) {
+                    Utils.instance.dismissProgressDialog()
+                    mDialogView.dismiss()
+                    try {
+                        if (AccessToken.getCurrentAccessToken() != null) {
+                            GraphRequest(
+                                AccessToken.getCurrentAccessToken(),
+                                "/me/permissions/",
+                                null,
+                                HttpMethod.DELETE,
+                                GraphRequest.Callback {
+                                    LoginManager.getInstance().logOut()
+                                }).executeAsync()
+
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Unable to connect server",
+                        Toast.LENGTH_LONG
+                    ).show()
+
+                }
+            })
     }
 
 
     fun FBLoginAPI(facebook_id: String) {
         Utils.instance.showProgressBar(this@LoginActivity)
         AndroidNetworking.post(Utils.BASE_URL + Utils.FB_LOGIN)
-                .addBodyParameter("facebook_id", facebook_id)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsObject(FbLoginPojo::class.java, object : ParsedRequestListener<FbLoginPojo> {
-                    override fun onResponse(user: FbLoginPojo) {
-                        Utils.instance.dismissProgressDialog()
-                        if (user.success == true) {
-                            sharedPreference.putString("access_token", user.accessToken)
-                            sharedPreference.putInt("id", user.user.id)
-                            sharedPreference.putString("name", user.user.name.toString())
-                            sharedPreference.putString("last_name", user.user.lastName.toString())
+            .addBodyParameter("facebook_id", facebook_id)
+            .setPriority(Priority.HIGH)
+            .build()
+            .getAsObject(FbLoginPojo::class.java, object : ParsedRequestListener<FbLoginPojo> {
+                override fun onResponse(user: FbLoginPojo) {
+                    Utils.instance.dismissProgressDialog()
+                    if (user.success == true) {
+                        sharedPreference.putString("access_token", user.accessToken)
+                        sharedPreference.putInt("id", user.user.id)
+                        sharedPreference.putString("name", user.user.name.toString())
+                        sharedPreference.putString("last_name", user.user.lastName.toString())
 //                            sharedPreference.putInt("age", user.user.age)
-                            if (user.user.age != null && !user.user.age.equals("")) {
-                                sharedPreference.putString("age", user.user.age)
-                            } else {
-                                sharedPreference.putString("age", "0")
-                            }
-                            if (user.user.location != null)
-                                sharedPreference.putString("location", user.user.location.toString())
-                            else
-                                sharedPreference.putString("location", "")
-                            if (user.user.phone == null) {
-                                sharedPreference.putString("phone", "")
-                            } else {
-                                sharedPreference.putString("phone", user.user.phone.toString())
-                            }
-                            sharedPreference.putString("role", user.user.role.toString())
-                            sharedPreference.putString("email", user.user.email.toString())
-                            sharedPreference.putInt("status", user.user.status)
-
-                            logRegistrationEvent(logger!!, sharedPreference.getString("name"), sharedPreference.getString("last_name"), sharedPreference.getString("email"), sharedPreference.getString("age"), sharedPreference.getString("location"), sharedPreference.getString("phone"), sharedPreference.getString("role"), "", "facebook")
-
-                            Toast.makeText(this@LoginActivity, "User has been Login successfully.", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                            intent.putExtra("f", "")
-                            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
-                            startActivity(intent)
-                            finish()
+                        if (user.user.age != null && !user.user.age.equals("")) {
+                            sharedPreference.putString("age", user.user.age)
                         } else {
-                            Toast.makeText(this@LoginActivity, "User has been Login not successfully.", Toast.LENGTH_LONG).show()
+                            sharedPreference.putString("age", "0")
                         }
-                    }
+                        if (user.user.location != null)
+                            sharedPreference.putString("location", user.user.location.toString())
+                        else
+                            sharedPreference.putString("location", "")
+                        if (user.user.phone == null) {
+                            sharedPreference.putString("phone", "")
+                        } else {
+                            sharedPreference.putString("phone", user.user.phone.toString())
+                        }
+                        sharedPreference.putString("role", user.user.role.toString())
+                        sharedPreference.putString("email", user.user.email.toString())
+                        sharedPreference.putInt("status", user.user.status)
 
-                    override fun onError(anError: ANError) {
-                        Utils.instance.dismissProgressDialog()
-                        Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
+                        logRegistrationEvent(
+                            logger!!,
+                            sharedPreference.getString("name"),
+                            sharedPreference.getString("last_name"),
+                            sharedPreference.getString("email"),
+                            sharedPreference.getString("age"),
+                            sharedPreference.getString("location"),
+                            sharedPreference.getString("phone"),
+                            sharedPreference.getString("role"),
+                            "",
+                            "facebook"
+                        )
+
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "User has been Login successfully.",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        intent.putExtra("f", "")
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "User has been Login not successfully.",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
-                })
+                }
+
+                override fun onError(anError: ANError) {
+                    Utils.instance.dismissProgressDialog()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Unable to connect server",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
     }
 
 
@@ -640,54 +773,61 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
             val cday = c.get(Calendar.DAY_OF_MONTH)
 
             val datePickerDialog = DatePickerDialog(
-                    this@LoginActivity,
-                    android.app.AlertDialog.THEME_HOLO_DARK,
-                    object : DatePickerDialog.OnDateSetListener {
-                        override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
-                            when (month) {
-                                0 -> {
-                                    selectedAge = "January ${year}"
-                                }
-                                1 -> {
-                                    selectedAge = "February ${year}"
-                                }
-                                2 -> {
-                                    selectedAge = "March ${year}"
-                                }
-                                3 -> {
-                                    selectedAge = "April ${year}"
-                                }
-                                4 -> {
-                                    selectedAge = "May ${year}"
-                                }
-                                5 -> {
-                                    selectedAge = "June ${year}"
-                                }
-                                6 -> {
-                                    selectedAge = "July ${year}"
-                                }
-                                7 -> {
-                                    selectedAge = "August ${year}"
-                                }
-                                8 -> {
-                                    selectedAge = "September ${year}"
-                                }
-                                9 -> {
-                                    selectedAge = "October ${year}"
-                                }
-                                10 -> {
-                                    selectedAge = "November ${year}"
-                                }
-                                11 -> {
-                                    selectedAge = "December ${year}"
-                                }
-                                else -> selectedAge = ""
+                this@LoginActivity,
+                android.app.AlertDialog.THEME_HOLO_DARK,
+                object : DatePickerDialog.OnDateSetListener {
+                    override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
+                        when (month) {
+                            0 -> {
+                                selectedAge = "January ${year}"
                             }
-                            mDialogView.edt_age_custom.setText(selectedAge)
+                            1 -> {
+                                selectedAge = "February ${year}"
+                            }
+                            2 -> {
+                                selectedAge = "March ${year}"
+                            }
+                            3 -> {
+                                selectedAge = "April ${year}"
+                            }
+                            4 -> {
+                                selectedAge = "May ${year}"
+                            }
+                            5 -> {
+                                selectedAge = "June ${year}"
+                            }
+                            6 -> {
+                                selectedAge = "July ${year}"
+                            }
+                            7 -> {
+                                selectedAge = "August ${year}"
+                            }
+                            8 -> {
+                                selectedAge = "September ${year}"
+                            }
+                            9 -> {
+                                selectedAge = "October ${year}"
+                            }
+                            10 -> {
+                                selectedAge = "November ${year}"
+                            }
+                            11 -> {
+                                selectedAge = "December ${year}"
+                            }
+                            else -> selectedAge = ""
                         }
-                    },
-                    cyear, cmonth, cday)
-            datePickerDialog.datePicker.findViewById<NumberPicker>(resources.getIdentifier("day", "id", "android")).setVisibility(View.GONE)
+                        mDialogView.edt_age_custom.setText(selectedAge)
+                    }
+                },
+                cyear, cmonth, cday
+            )
+            datePickerDialog.datePicker.findViewById<NumberPicker>(
+                resources.getIdentifier(
+                    "day",
+                    "id",
+                    "android"
+                )
+            ).setVisibility(View.GONE)
             datePickerDialog.show()
         }
 
@@ -704,7 +844,12 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         }
 
         mDialogView.spn_role.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
                 if (position == 0) {
                     role = 0
                 } else {
@@ -723,11 +868,21 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         }
 
         mDialogView.tvTermsCondition.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java).putExtra("url", "https://www.legalex.ph/terms-and-conditions/"))
+            startActivity(
+                Intent(this, WebViewActivity::class.java).putExtra(
+                    "url",
+                    "https://www.legalex.ph/terms-and-conditions/"
+                )
+            )
         }
 
         mDialogView.tvPrivacy.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java).putExtra("url", "https://www.legalex.ph/privacy-policy/"))
+            startActivity(
+                Intent(this, WebViewActivity::class.java).putExtra(
+                    "url",
+                    "https://www.legalex.ph/privacy-policy/"
+                )
+            )
         }
 
         mDialogView.btn_continue_dialog.setOnClickListener {
@@ -752,10 +907,15 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
               } else*/
 
             if (role == 0) {
-                Toast.makeText(this@LoginActivity, "Please select any role", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@LoginActivity, "Please select any role", Toast.LENGTH_LONG)
+                    .show()
 
             } else if (!mDialogView.checkBox.isChecked) {
-                Toast.makeText(this@LoginActivity, "Please click on Checkbox to agree", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Please click on Checkbox to agree",
+                    Toast.LENGTH_LONG
+                ).show()
             } else {
 
 //                val firstname = mDialogView.edt_name.text.toString()
@@ -769,8 +929,20 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
                 val loc = mDialogView.edt_loc_cus.text.toString()
                 val fbid = fb_id
 
-                CheckRegister(firstname ?: "", lastname
-                        ?: "", email, password, code, phonenumber, rolee, age, loc, fbid, mDialogView)
+                CheckRegister(
+                    firstname ?: "",
+                    lastname
+                        ?: "",
+                    email,
+                    password,
+                    code,
+                    phonenumber,
+                    rolee,
+                    age,
+                    loc,
+                    fbid,
+                    mDialogView
+                )
 
 
 //                if (mDialogView.edt_loc_cus.text.isNotEmpty()) {
@@ -808,7 +980,19 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 
     }
 
-    private fun CheckRegister(firstname: String, lastname: String, email: String, password: String, code: String, phonenumber: String, rolee: String, age: String, loc: String, fbid: String, mDialogView: Dialog) {
+    private fun CheckRegister(
+        firstname: String,
+        lastname: String,
+        email: String,
+        password: String,
+        code: String,
+        phonenumber: String,
+        rolee: String,
+        age: String,
+        loc: String,
+        fbid: String,
+        mDialogView: Dialog
+    ) {
 
 
         var mainvalue = if (phonenumber == "") {
@@ -823,25 +1007,25 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 
         Utils.instance.showProgressBar(this@LoginActivity)
         AndroidNetworking.post(Utils.BASE_URL + Utils.CHECK_REGISTERED)
-                .addBodyParameter("name", firstname)
-                .addBodyParameter("last_name", lastname)
-                .addBodyParameter("email", email)
-                .addBodyParameter("password", password)
-                .addBodyParameter("facebook_id", fbid)
-                .addBodyParameter("age", age)
-                .addBodyParameter("location", loc)
-                .addBodyParameter("phone", mainvalue)
-                .addBodyParameter("role", rolee)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsJSONObject(object : JSONObjectRequestListener {
+            .addBodyParameter("name", firstname)
+            .addBodyParameter("last_name", lastname)
+            .addBodyParameter("email", email)
+            .addBodyParameter("password", password)
+            .addBodyParameter("facebook_id", fbid)
+            .addBodyParameter("age", age)
+            .addBodyParameter("location", loc)
+            .addBodyParameter("phone", mainvalue)
+            .addBodyParameter("role", rolee)
+            .setPriority(Priority.HIGH)
+            .build()
+            .getAsJSONObject(object : JSONObjectRequestListener {
 
-                    override fun onResponse(response: JSONObject) {
-                        Utils.instance.dismissProgressDialog()
+                override fun onResponse(response: JSONObject) {
+                    Utils.instance.dismissProgressDialog()
 
-                        Log.e("Signupresponse", ">>>>>>>>>>>>>>>>>>$response")
-                        try {
-                            Log.e("Responseee", ">>>>>>>>>>>>>>>>>>>>>>" + response.get("success"))
+                    Log.e("Signupresponse", ">>>>>>>>>>>>>>>>>>$response")
+                    try {
+                        Log.e("Responseee", ">>>>>>>>>>>>>>>>>>>>>>" + response.get("success"))
 //                            if (response != null && response.length() > 0) {
 //                                checkstatus = response.getBoolean("success")
 //                                if (checkstatus)
@@ -868,34 +1052,60 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
 //                            } else {
 //                                Toast.makeText(applicationContext, "Something went wrong while connecting to server", Toast.LENGTH_LONG).show()
 //                            }
-                            if (response.optBoolean("success")) {
-                                FBSignupAPI(firstname, lastname, email, fbid, rolee, age, loc, code + "-" + phonenumber, mDialogView)
-                            } else {
+                        if (response.optBoolean("success")) {
+                            FBSignupAPI(
+                                firstname,
+                                lastname,
+                                email,
+                                fbid,
+                                rolee,
+                                age,
+                                loc,
+                                code + "-" + phonenumber,
+                                mDialogView
+                            )
+                        } else {
 //                                if (response.optJSONObject("message").length() == 2)
 //                                {
 //
 //                                }
 //                                else {
-                                if (response.optJSONObject("message").toString().contains("email")) {
-                                    Toast.makeText(this@LoginActivity, "The email has already been taken.", Toast.LENGTH_LONG).show()
+                            if (response.optJSONObject("message").toString().contains("email")) {
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    "The email has already been taken.",
+                                    Toast.LENGTH_LONG
+                                ).show()
 
-                                } else {
-                                    Toast.makeText(this@LoginActivity, "The phone has already been taken.", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    "The phone has already been taken.",
+                                    Toast.LENGTH_LONG
+                                ).show()
 
-                                }
-//                                }
                             }
-                        } catch (e: Exception) {
-                            Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
+//                                }
                         }
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Unable to connect server",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
+                }
 
-                    override fun onError(error: ANError) {
-                        Utils.instance.dismissProgressDialog()
-                        Toast.makeText(this@LoginActivity, "Unable to connect server", Toast.LENGTH_LONG).show()
+                override fun onError(error: ANError) {
+                    Utils.instance.dismissProgressDialog()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Unable to connect server",
+                        Toast.LENGTH_LONG
+                    ).show()
 
-                    }
-                })
+                }
+            })
     }
 
 
@@ -924,17 +1134,23 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
     private fun loginClicked() {
         if (checkPermission(permission) > 0) {
             ActivityCompat.requestPermissions(
-                    this,
-                    permission,
-                    1001
+                this,
+                permission,
+                1001
             )
         } else {
-            if (MySharedPreference(this@LoginActivity).getInt("id").toString() != getSinchServiceInterface().userName) {
+            if (MySharedPreference(this@LoginActivity).getInt("id")
+                    .toString() != getSinchServiceInterface().userName
+            ) {
                 getSinchServiceInterface().stopClient()
             }
 
             if (!getSinchServiceInterface().isStarted) {
-                getSinchServiceInterface().startClient(MySharedPreference(this@LoginActivity).getInt("id").toString())
+                getSinchServiceInterface().startClient(
+                    MySharedPreference(this@LoginActivity).getInt(
+                        "id"
+                    ).toString()
+                )
             } else {
                 openPlaceCallActivity()
             }
@@ -943,7 +1159,8 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
     }
 
     private fun openPlaceCallActivity() {
-        Toast.makeText(this@LoginActivity, "User has been Login successfully.", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@LoginActivity, "User has been Login successfully.", Toast.LENGTH_LONG)
+            .show()
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
         intent.putExtra("f", "")
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
@@ -957,7 +1174,11 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         val alertDialogBuilder = AlertDialog.Builder(activity)
         alertDialogBuilder.setMessage("You cannot log in because you are already logged in with another device. Click Use Here to use this ID here");
         alertDialogBuilder.setPositiveButton("Use here") { _, _ ->
-            LoginAPI(edt_email_login.text.toString(), edt_pwd_login.text.toString(), Utils.LOGIN_HERE)
+            LoginAPI(
+                edt_email_login.text.toString(),
+                edt_pwd_login.text.toString(),
+                Utils.LOGIN_HERE
+            )
         }
         alertDialogBuilder.setNegativeButton("Cancel") { _, _ ->
         }
@@ -965,8 +1186,10 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         val alertDialog = alertDialogBuilder.create()
 
         alertDialog.setOnShowListener {
-            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(activity.resources.getColor(R.color.colorPrimary));
-            alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(activity.resources.getColor(R.color.colorPrimary));
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(activity.resources.getColor(R.color.colorPrimary));
+            alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(activity.resources.getColor(R.color.colorPrimary));
         }
 
         alertDialog.show()
@@ -985,7 +1208,11 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         return permissionNeeded
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (grantResults.size > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED && grantResults[3] == PackageManager.PERMISSION_GRANTED && grantResults[4] == PackageManager.PERMISSION_GRANTED) {
@@ -995,11 +1222,16 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
             } else {
                 if (Build.VERSION.SDK_INT >= 23) {
                     //  val showRationale = shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)
-                    val showRationale2 = shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
-                    val showRationale3 = shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)
-                    val showRationale4 = shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)
-                    val showRationale5 = shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    val showRationale6 = shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)
+                    val showRationale2 =
+                        shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)
+                    val showRationale3 =
+                        shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)
+                    val showRationale4 =
+                        shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)
+                    val showRationale5 =
+                        shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    val showRationale6 =
+                        shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)
                     if (/*!showRationale ||*/ !showRationale2 || !showRationale3 || !showRationale4 || !showRationale5 || showRationale6) {
                         showSettingsDialog();
                     }
@@ -1019,9 +1251,10 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         builder.setNegativeButton("Cancel") { dialogInterface, i ->
 
             ActivityCompat.requestPermissions(
-                    this,
-                    permission,
-                    1001)
+                this,
+                permission,
+                1001
+            )
 
         }
         builder.show()
@@ -1034,7 +1267,19 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         startActivityForResult(intent, requestCodeSetting)
     }
 
-    fun dialogForTerms(firstname: String, lastname: String, email: String, password: String, code: String, phonenumber: String, rolee: String, age: String, loc: String, fbid: String, mDialogView: Dialog) {
+    fun dialogForTerms(
+        firstname: String,
+        lastname: String,
+        email: String,
+        password: String,
+        code: String,
+        phonenumber: String,
+        rolee: String,
+        age: String,
+        loc: String,
+        fbid: String,
+        mDialogView: Dialog
+    ) {
         val dialogBuilder = AlertDialog.Builder(this)
         val view = LayoutInflater.from(this).inflate(R.layout.popup_camera_gallery, null)
         val textViewTerms = view.findViewById<TextView>(R.id.textViewTerms)
@@ -1042,18 +1287,30 @@ class LoginActivity : BaseActivity(), SinchService.StartFailedListener {
         val textViewAgree = view.findViewById<TextView>(R.id.textViewAgree)
         val mTextViewCancel = view.findViewById<TextView>(R.id.textViewCancel)
         textViewTerms.setOnClickListener {
-            startActivity(Intent(view.context, WebViewActivity::class.java).putExtra("url", "https://www.legalex.ph/terms-and-conditions/"))
+            startActivity(
+                Intent(view.context, WebViewActivity::class.java).putExtra(
+                    "url",
+                    "https://www.legalex.ph/terms-and-conditions/"
+                )
+            )
         }
         textViewPrivacyPolicy.setOnClickListener {
-            startActivity(Intent(view.context, WebViewActivity::class.java).putExtra("url", "https://www.legalex.ph/privacy-policy/"))
+            startActivity(
+                Intent(view.context, WebViewActivity::class.java).putExtra(
+                    "url",
+                    "https://www.legalex.ph/privacy-policy/"
+                )
+            )
         }
         mTextViewCancel.setOnClickListener {
             dialog?.dismiss()
         }
         textViewAgree.setOnClickListener {
             dialog?.dismiss()
-            CheckRegister(firstname ?: "", lastname
-                    ?: "", email, password, code, phonenumber, rolee, age, loc, fbid, mDialogView)
+            CheckRegister(
+                firstname ?: "", lastname
+                    ?: "", email, password, code, phonenumber, rolee, age, loc, fbid, mDialogView
+            )
         }
         dialogBuilder.setView(view)
         dialogBuilder.setCancelable(false)
